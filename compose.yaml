@@ -22,7 +22,7 @@ services:
       context: .
       dockerfile: ./backend/Dockerfile
     volumes:
-      - ./backend/app :/usr/src/backend/app
+      - ./backend/app:/usr/src/backend/app
     ports:
       - 5000:5000
 
