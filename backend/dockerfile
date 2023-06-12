@@ -1,6 +1,4 @@
-# FROM tiangolo/uvicorn-gunicorn:python3.10
 FROM  python:3.9-slim
-
 
 WORKDIR /usr/src/backend/app
 COPY ./backend/app/requirements.txt .
