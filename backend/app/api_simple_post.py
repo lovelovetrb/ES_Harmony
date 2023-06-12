@@ -1,15 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI()
-
-@app.get("/")
-def root():
-    return {"message": "H"}
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
 
 class Input(BaseModel):
     user_id: str
@@ -32,3 +23,4 @@ def main(input_data: Input):
     # 処理結果と入力データをまとめて返す
     output_data = Output(user_id=user_id, query=query, output=processed_text)
     return output_data
+
