@@ -23,8 +23,10 @@ services:
       dockerfile: ./backend/Dockerfile
     volumes:
       - ./backend/app:/usr/src/backend/app
+      - site-packages:/usr/local/lib/python3.9/site-packages
     ports:
       - 5000:5000
 
 volumes:
     node_modules:
+    site-packages:
