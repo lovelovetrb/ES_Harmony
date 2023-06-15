@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,nextjs,macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,nextjs,macos,linux
 
+# firebase admin key
+admin_info.json
 ### Linux ###
 *~
 
