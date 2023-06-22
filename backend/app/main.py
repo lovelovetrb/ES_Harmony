@@ -66,6 +66,15 @@ firebase_admin.initialize_app(cred)
 # Firestoreクライアントの作成
 db = firestore.client()
 
+'''
+# データベースに追加
+doc_ref = db.collection('student').document()
+doc_ref.set({
+    'name':'田中',
+    'age':50,
+    'location':'ニューヨーク'
+})
+'''
 
 @app.get("/data")
 async def get_data():
@@ -74,6 +83,7 @@ async def get_data():
     collection_ref = db.collection("student")
     docs = collection_ref.get()
     for doc in docs:
-        data.append(doc.to_dict())
+        data.append(f'{doc.id} => {doc.to_dict()}')
+        print(f'{doc.id} => {doc.to_dict()}')
 
     return {"data": data}
