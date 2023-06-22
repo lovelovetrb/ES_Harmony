@@ -1,1 +1,9 @@
+.highlight {
+  background: linear-gradient(transparent 40%, #f6ff5f 40%);
+}
+
+.ai_highlight {
+  background: linear-gradient(transparent 40%, #ffce9e 40%);
+}
+
 

@@ -7,27 +7,91 @@
 
 .main {
     width: 60%;
+    min-width: 600px;
     background-color: #094067;
     border-radius: 10px;
-    padding: 20px 15px;
+    padding: 20px;
 }
 
-.heading {
+.nameArea {
     color: #fffffe;
     font-size: 1.5rem;
     text-align: center;
     font-weight: 700;
     letter-spacing: 3px;
+    margin-top: 5px;
+    margin-bottom: 25px;
 }
 
 .inner {
     margin-top: 10px;
     background-color: #faf5f0;
     border-radius: 10px;
-    padding: 20px 15px;
+    padding: 20px 25px;
 }
 
-.flex-column {
+.heading {
+    color: #094067;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 10px 15px;
+    width: 150px;
+    text-align: center;
+    border: 5px solid #2266a6;
+    border-radius: 10px;
+    background-color: #fffffe;
+}
+
+.box p {
+    color: #094067;
+    padding: 3px 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.flex_column {
     display: flex;
-  flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.question {
+    width: 45%;
+}
+
+.imageArea {
+    width: 45%;
+}
+
+.subheading {
+    margin: 10px 0;
+}
+
+.textArea {
+    border: 5px solid #094067;
+    border-radius: 10px;
+    padding: 30px 25px;
+    width: 100%;
+    background-color: #fffffe;
+}
+
+.textArea p {
+  line-height: 2rem;
+}
+
+.usage {
+  margin-top: 1.3rem;
+  width: 60%;
+}
+
+.usage li {
+  margin-top: 1rem;
 }
