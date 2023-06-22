@@ -1,10 +1,14 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import { GetServerSideProps } from "next";
 
 import Header from "@/components/Header/Header";
 import ButtonArea from "@/components/molecules/ButtonArea/ButtonArea";
 import Button from "@/components/atoms/Button/Button";
 import StudentCard from "@/components/molecules/StudentCard/StudentCard";
+
+import { StudentData } from "@/types/types";
+import { getData } from "@/lib/getData";
 
 {
     /* TODO: testの削除 */
@@ -20,7 +24,7 @@ const notojp = Noto_Sans_JP({
     display: "swap",
 });
 
-export default function Home() {
+export default function Home({ data }: StudentData[]) {
     return (
         <>
             <Head>
@@ -37,8 +41,9 @@ export default function Home() {
                         <Button text="Button" />
                     </ButtonArea>
                     <div className={styles.cardArea}>
-                        {/* TODO: データの表示処理 */}
-                        <StudentCard data={testStudentData} />
+                        {data.map((studentData: StudentData, index: number) => (
+                            <StudentCard key={index} studentData={studentData} />
+                        ))}
                     </div>
                 </div>
             </main>
@@ -48,3 +53,12 @@ export default function Home() {
 {
     /* TODO: SSGによるデータの取得 */
 }
+
+export const getServerSideProps: GetServerSideProps<{
+    props: StudentData[];
+}> = async () => {
+    const data: StudentData = await getData();
+    return {
+        props: { data },
+    };
+};

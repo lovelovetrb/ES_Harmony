@@ -5,22 +5,23 @@ import Link from "next/link";
 import { StudentData } from "@/types/types";
 
 type props = {
-  data: StudentData;
+  studentData: StudentData;
+  index: number;
 }
 
-const StudentCard = ({data}:props) => {
+const StudentCard = ({index,studentData}:props) => {
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} key={index}>
             <div className={styles.icon}>
                 <Image src="/icon.png" height={40} width={40} alt="icon" />
             </div>
             <div className={styles.student_info}>
-                <h3>{data.name} さん</h3>
-                <h3>{data.school}</h3>
+                <h3>{studentData.name} さん</h3>
+                <h3>{studentData.school}</h3>
             </div>
             <div className={styles.match_info}>
-                <h3>マッチ度</h3>
-                <h3>AI度</h3>
+                <h3>マッチ度:{studentData.match_level}</h3>
+                <h3>AI度:{studentData.AI_degree}</h3>
             </div>
             <div className={styles.judgeArea}>
                 <p>

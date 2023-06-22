@@ -1,4 +1,5 @@
 export type StudentData = {
+    id: string;
     NetworkImage: NetworkImage;
     name: string;
     school: string;
