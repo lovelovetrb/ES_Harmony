@@ -1,9 +1,21 @@
+import style from "@/components/atoms/Button/Button.module.css";
+
 type props = {
-  text:string;
+    text: string;
+    onClickFunc: any;
 };
 
-const Button = ({ text } : props) => {
-    return <button>{text}</button>;
+const Button = ({ text, onClickFunc }: props) => {
+    return (
+        <button
+            className={style.button}
+            onClick={() => {
+                onClickFunc();
+            }}
+        >
+            {text}
+        </button>
+    );
 };
 
 export default Button;

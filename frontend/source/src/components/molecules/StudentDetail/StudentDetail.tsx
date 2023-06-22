@@ -1,4 +1,4 @@
-import { StudentData } from "@/types/types";
+import { Question, StudentData } from "@/types/types";
 import styles from "@/components/molecules/StudentDetail/StudentDetail.module.css";
 import { WrapUp } from "@/types/types";
 
@@ -42,9 +42,9 @@ export default function StudentDetail({ data }: props) {
                                 );
                             })}
                         </div>
-                        <div className={styles.wrap_up}>
-                            <h2>要約</h2>
-                            {data.wrap_up.map((item: WrapUp, index: number) => {
+                        <div className={styles.question}>
+                            <h2>質問</h2>
+                            {data.questions.map((item: Question, index: number) => {
                                 return (
                                     <div key={index}>
                                         <h3>
