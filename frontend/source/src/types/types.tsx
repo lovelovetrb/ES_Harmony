@@ -1,4 +1,4 @@
-export type StudentData = {
+export interface StudentData {
     id: string;
     NetworkImage: NetworkImage;
     name: string;

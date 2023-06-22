@@ -5,13 +5,13 @@ import Link from "next/link";
 import { StudentData } from "@/types/types";
 
 type props = {
-  studentData: StudentData;
-  index: number;
-}
+    studentData: StudentData;
+    key: number;
+};
 
-const StudentCard = ({index,studentData}:props) => {
+const StudentCard = ({ key, studentData }: props) => {
     return (
-        <div className={styles.wrapper} key={index}>
+        <div className={styles.wrapper} key={key}>
             <div className={styles.icon}>
                 <Image src="/icon.png" height={40} width={40} alt="icon" />
             </div>
@@ -25,7 +25,7 @@ const StudentCard = ({index,studentData}:props) => {
             </div>
             <div className={styles.judgeArea}>
                 <p>
-                    <Link href="/aaaa">詳細を見る→</Link>
+                    <Link href={`/${studentData.id}`}>詳細を見る→</Link>
                 </p>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 import Header from "@/components/Header/Header";
 import ButtonArea from "@/components/molecules/ButtonArea/ButtonArea";
@@ -9,11 +9,6 @@ import StudentCard from "@/components/molecules/StudentCard/StudentCard";
 
 import { StudentData } from "@/types/types";
 import { getData } from "@/lib/getData";
-
-{
-    /* TODO: testの削除 */
-}
-import { testStudentData } from "@/test/test_data";
 
 import { Noto_Sans_JP } from "next/font/google";
 
@@ -24,7 +19,11 @@ const notojp = Noto_Sans_JP({
     display: "swap",
 });
 
-export default function Home({ data }: StudentData[]) {
+type Props = {
+    studentData: StudentData[];
+};
+
+export default function Home({ studentData }: Props) {
     return (
         <>
             <Head>
@@ -41,8 +40,8 @@ export default function Home({ data }: StudentData[]) {
                         <Button text="Button" />
                     </ButtonArea>
                     <div className={styles.cardArea}>
-                        {data.map((studentData: StudentData, index: number) => (
-                            <StudentCard key={index} studentData={studentData} />
+                        {studentData.map((one_studentData: StudentData, index: number) => (
+                            <StudentCard key={index} studentData={one_studentData} />
                         ))}
                     </div>
                 </div>
@@ -54,11 +53,11 @@ export default function Home({ data }: StudentData[]) {
     /* TODO: SSGによるデータの取得 */
 }
 
-export const getServerSideProps: GetServerSideProps<{
-    props: StudentData[];
+export const getStaticProps: GetStaticProps<{
+    studentData: StudentData[];
 }> = async () => {
-    const data: StudentData = await getData();
+    const studentData: StudentData[] = await getData();
     return {
-        props: { data },
+        props: { studentData },
     };
 };

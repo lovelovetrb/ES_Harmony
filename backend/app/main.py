@@ -24,11 +24,12 @@ app.add_middleware(
 @app.get("/")
 def root():
     return [{"NetworkImage":{"url":"https://www.notion.so/6-16-698927660ec446c5af6b7dc62a9f8d3c"},
+            "id":"abcde12345",
             "name":"荒沢康平",
             "school":"静岡大学",
             "match_level":80,
             "AI_degree":20,
-            "wrap-up":[{"genre":"志望動機",
+            "wrap_up":[{"genre":"志望動機",
                         "content":"金が欲しいから"},
                         {"genre":"技術スタック",
                         "content":"なし"}],
@@ -36,7 +37,23 @@ def root():
                         "content":"就活なめてんのか"},
                         {"genre":"技術スタック",
                         "content":"なめとんのかわれ"}]
-            }]
+            },
+{"NetworkImage":{"url":"https://www.notion.so/6-16-698927660ec446c5af6b7dc62a9f8d3c"},
+            "id":"0000qwerty",
+            "name":"馬場海好",
+            "school":"静岡大学",
+            "match_level":90,
+            "AI_degree":40,
+            "wrap_up":[{"genre":"志望動機",
+                        "content":"金が欲しいから"},
+                        {"genre":"技術スタック",
+                        "content":"もろもろ"}],
+            "questions":[{"genre":"志望動機",
+                        "content":"就活なめてんのか"},
+                        {"genre":"技術スタック",
+                        "content":"なめとんのかわれ"}]
+            }
+            ]
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str):
