@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Question, StudentData } from "@/types/types";
 import styles from "@/components/molecules/StudentDetail/StudentDetail.module.css";
 import { WrapUp } from "@/types/types";
@@ -62,6 +64,9 @@ export default function StudentDetail({ data }: props) {
                         </div>
                     </div>
                 </div>
+                <p className={styles.link}>
+                    <Link href="/">◀ 学生一覧に戻る</Link>
+                </p>
             </main>
             <aside></aside>
         </div>

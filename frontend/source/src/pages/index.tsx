@@ -27,8 +27,8 @@ type Props = {
 };
 
 export default function Home({ studentData }: Props) {
-    const [sort, setSort] = useState("match_level");
-    const [order, setOrder] = useState("asc");
+    const [sort, setSort] = useState<string>("match_level");
+    const [order, setOrder] = useState<string>("desc");
 
     const onClickOrder = () => {
         if (order === "desc") {
@@ -46,20 +46,42 @@ export default function Home({ studentData }: Props) {
         }
     };
 
-    useEffect(() => {
-        const sortData = () => {
-            const sortedData = studentData.sort((a, b) => {
-                if (order === "desc") {
-                    return a[sort] - b[sort];
-                } else {
-                    return b[sort] - a[sort];
-                }
-            });
-            return sortedData;
-        };
-        sortData();
-    }, [sort, order]);
+    const sortData = () => {
+        studentData.sort((a, b) => {
+            console.log(sort);
+            console.log(order);
+            if (order === "desc") {
+                return a[sort] - b[sort];
+            } else {
+                return b[sort] - a[sort];
+            }
+        });
+    };
 
+    useEffect(() => {
+        sortData();
+    }, [sort, order, studentData]);
+
+    useEffect(() => {
+        sortData();
+    }, []);
+
+    const list = {
+        visible: {
+            opacity: 1, // 不透明度1
+            transition: {
+                staggerChildren: 0.1, // 子要素に1秒間隔でアニメーションを行う
+            },
+        },
+        hidden: {
+            opacity: 0, // 不透明度0
+        },
+    };
+
+    const item = {
+        visible: { x: 0 },
+        hidden: { x: -300 },
+    };
     return (
         <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
@@ -73,20 +95,20 @@ export default function Home({ studentData }: Props) {
                     <Header />
                     <div className={styles.container}>
                         <ButtonArea>
+                            {sort}
                             <Button text={sort == "AI_degree" ? "AI度" : "マッチ度"} onClickFunc={onClickSort} />
                             <Button text={order == "asc" ? "昇順↑" : "降順↓"} onClickFunc={onClickOrder} />
                         </ButtonArea>
                         <div className={styles.cardArea}>
-                            {studentData.map((one_studentData: StudentData, index: number) => (
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.5 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.25 }}
-                                    whileHover={{ scale: 1.05 }}
-                                >
-                                    <StudentCard studentData={one_studentData} />
-                                </motion.div>
-                            ))}
+                            <motion.ol variants={list} initial="hidden" animate="visible">
+                                {studentData.map((one_studentData: StudentData, index: number) => (
+                                    <motion.li variants={item} key={index}>
+                                        <motion.div transition={{ duration: 0.25 }} whileHover={{ scale: 1.05 }} key={index}>
+                                            <StudentCard studentData={one_studentData} />
+                                        </motion.div>
+                                    </motion.li>
+                                ))}
+                            </motion.ol>
                         </div>
                     </div>
                 </main>

@@ -58,11 +58,10 @@ async def append_data():
     # データベースに追加
     doc_ref = db.collection('student').document()
     doc_ref.set({"NetworkImage":{"url":"https://www.notion.so/6-16-698927660ec446c5af6b7dc62a9f8d3c"},
-            "id":"0000qwerty",
-            "name":"馬場海好",
-            "school":"静岡大学",
-            "match_level":90,
-            "AI_degree":40,
+            "name":"田中太郎",
+            "school":"京都大学",
+            "match_level":50,
+            "AI_degree":50,
             "wrap_up":[{"genre":"志望動機",
                         "content":"金が欲しいから"},
                         {"genre":"技術スタック",
@@ -70,7 +69,10 @@ async def append_data():
             "questions":[{"genre":"志望動機",
                         "content":"就活なめてんのか"},
                         {"genre":"技術スタック",
-                        "content":"なめとんのかわれ"}]
+                        "content":"なめとんのかわれ"}],
+                "ability_to_compose_a_text":{
+        "__html": "文章構成能力の分析を行います。<mark class=highlight>文章構成能力の分析を行います。文章構成能力</mark>の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力<mark class=ai_highlight>文章構成能力の分析を行います。文章構成能力</mark>の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。文章構成能力の分析を行います。"
+    }
             }
 )
 

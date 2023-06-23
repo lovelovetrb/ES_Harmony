@@ -1,6 +1,10 @@
 import styles from "@/components/molecules/StudentCard/StudentCard.module.css";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { useEffect, useRef } from "react";
+import { useGetElementProperty } from "@/lib/hooks";
 
 import { StudentData } from "@/types/types";
 
@@ -9,9 +13,15 @@ type props = {
 };
 
 const StudentCard = ({ studentData }: props) => {
+    const targetRef = useRef(null);
+    const { getElementProperty } = useGetElementProperty<HTMLDivElement>(targetRef);
+    useEffect(() => {
+        console.log(`${studentData.name}の高さは${getElementProperty("y")}です`);
+    },);
+
     return (
         <Link href={`/${studentData.id}`}>
-            <div className={styles.wrapper} key={studentData.id}>
+            <div className={styles.wrapper} key={studentData.id} ref={targetRef}>
                 <div className={styles.icon}>
                     <Image src="/icon.png" height={40} width={40} alt="icon" />
                 </div>

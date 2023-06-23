@@ -1,5 +1,6 @@
 .container {
     margin-top: 3rem;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,9 +90,16 @@
 
 .usage {
   margin-top: 1.3rem;
-  width: 60%;
+  width: 250px;
 }
 
 .usage li {
   margin-top: 1rem;
+}
+
+.link {
+  color: #fffffe;
+  font-weight: 700;
+  margin-top: 1.3rem;
+  margin-left: .5rem;
 }

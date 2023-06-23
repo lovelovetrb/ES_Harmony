@@ -5,4 +5,11 @@
 .container {
     max-width: 60%;
     margin-inline: auto;
+  margin-bottom: 3rem;
 }
+
+.id_page_container {
+  margin: 3rem auto;
+}
+
+
