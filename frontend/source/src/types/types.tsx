@@ -7,8 +7,12 @@ export interface StudentData {
     AI_degree: number;
     wrap_up: WrapUp[];
     questions: Question[];
-    ability_to_compose_a_text: string;
+    ability_to_compose_a_text: ability_to_compose_a_text;
 }
+
+type ability_to_compose_a_text = {
+    __html: string;
+};
 
 export type WrapUp = {
     genre: string;

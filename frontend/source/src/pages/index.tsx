@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import { GetStaticProps } from "next";
 
 import styles from "@/styles/Home.module.css";
 
@@ -30,7 +31,7 @@ export default function Home({ studentData }: Props) {
     const [sort, setSort] = useState<string>("match_level");
     const [order, setOrder] = useState<string>("desc");
 
-    const onClickOrder = () => {
+    const onClickOrder = (order: string) => {
         if (order === "desc") {
             setOrder("asc");
         } else {
@@ -38,33 +39,19 @@ export default function Home({ studentData }: Props) {
         }
     };
 
-    const onClickSort = () => {
-        if (sort === "match_level") {
-            setSort("AI_degree");
-        } else {
-            setSort("match_level");
-        }
-    };
-
     const sortData = () => {
         studentData.sort((a, b) => {
-            console.log(sort);
-            console.log(order);
             if (order === "desc") {
-                return a[sort] - b[sort];
+                return a[sort as keyof StudentData] < b[sort as keyof StudentData] ? -1 : 1;
             } else {
-                return b[sort] - a[sort];
+                return b[sort as keyof StudentData] > a[sort as keyof StudentData] ? 1 : -1;
             }
         });
     };
 
     useEffect(() => {
         sortData();
-    }, [sort, order, studentData]);
-
-    useEffect(() => {
-        sortData();
-    }, []);
+    }, [sort, order,studentData]);
 
     const list = {
         visible: {
@@ -82,6 +69,7 @@ export default function Home({ studentData }: Props) {
         visible: { x: 0 },
         hidden: { x: -300 },
     };
+
     return (
         <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
@@ -95,9 +83,9 @@ export default function Home({ studentData }: Props) {
                     <Header />
                     <div className={styles.container}>
                         <ButtonArea>
-                            {sort}
-                            <Button text={sort == "AI_degree" ? "AI度" : "マッチ度"} onClickFunc={onClickSort} />
-                            <Button text={order == "asc" ? "昇順↑" : "降順↓"} onClickFunc={onClickOrder} />
+                            {order}
+                            <Button text={`マッチ度 ${order == "asc" ? "↑" : "↓"}`} onClickFunc={onClickOrder("match_level")} />
+                            <Button text={`AI度 ${order == "asc" ? "↑" : "↓"}`} onClickFunc={onClickOrder("AI_degree")} />
                         </ButtonArea>
                         <div className={styles.cardArea}>
                             <motion.ol variants={list} initial="hidden" animate="visible">
@@ -117,9 +105,14 @@ export default function Home({ studentData }: Props) {
     );
 }
 
-export const getStaticProps = async () => {
-    const studentData: StudentData = await getData();
+
+type returnData = {
+    studentData: StudentData[];
+};
+
+export const getStaticProps: GetStaticProps<returnData> = async () => {
+    const studentData = await getData();
     return {
-        props: { studentData },
+        props: { studentData: Array.isArray(studentData) ? studentData : [studentData] },
     };
 };
