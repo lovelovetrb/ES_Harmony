@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { GetStaticProps } from "next";
 
 import styles from "@/styles/Home.module.css";
@@ -29,31 +29,25 @@ type Props = {
 
 export default function Home({ studentData }: Props) {
     const [sort, setSort] = useState<string>("match_level");
-    const [order, setOrder] = useState<string>("desc");
+    const [order, setOrder] = useState<string>("asc");
 
     const handleSort = (field: keyof StudentData) => {
-        console.log(field)
+        console.log(field);
         if (field === sort) {
-          setOrder(order === "asc" ? "desc" : "asc");
+            setOrder(order === "asc" ? "desc" : "asc");
         } else {
-          setSort(field);
-          setOrder("asc");
+            setSort(field);
+            setOrder("asc");
         }
-      };
-
-    const sortData = () => {
-        studentData.sort((a, b) => {
-            if (order === "desc") {
-                return a[sort as keyof StudentData] < b[sort as keyof StudentData] ? -1 : 1;
-            } else {
-                return b[sort as keyof StudentData] > a[sort as keyof StudentData] ? 1 : -1;
-            }
-        });
     };
 
-    useEffect(() => {
-        sortData();
-    }, [sort, order,studentData]);
+    studentData.sort((a, b) => {
+        if (order === "desc") {
+            return a[sort as keyof StudentData] < b[sort as keyof StudentData] ? -1 : 1;
+        } else {
+            return b[sort as keyof StudentData] > a[sort as keyof StudentData] ? 1 : -1;
+        }
+    });
 
     const list = {
         visible: {
@@ -85,9 +79,12 @@ export default function Home({ studentData }: Props) {
                     <Header />
                     <div className={styles.container}>
                         <ButtonArea>
-                            {sort}  {order}
-                            <Button text={`マッチ度 ${sort == "match_level" && order == "asc" ? "↑" : "↓"}`} onClickFunc={handleSort} field={"match_level"}/>
-                            <Button text={`AI度 ${sort == "AI_degree" && order == "asc" ? "↑" : "↓"}`} onClickFunc={handleSort}  field={"AI_degree"}/>
+                            <Button
+                                text={`マッチ度 ${sort == "match_level" && order == "asc" ? "↑" : "↓"}`}
+                                onClickFunc={handleSort}
+                                field={"match_level"}
+                            />
+                            <Button text={`AI度 ${sort == "AI_degree" && order == "asc" ? "↑" : "↓"}`} onClickFunc={handleSort} field={"AI_degree"} />
                         </ButtonArea>
                         <div className={styles.cardArea}>
                             <motion.ol variants={list} initial="hidden" animate="visible">
@@ -106,7 +103,6 @@ export default function Home({ studentData }: Props) {
         </>
     );
 }
-
 
 type returnData = {
     studentData: StudentData[];
