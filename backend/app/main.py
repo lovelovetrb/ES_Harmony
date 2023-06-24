@@ -34,11 +34,12 @@ async def get_data():
     # Firestoreからデータを取得する処理
     collection_ref = db.collection("student")
     docs = collection_ref.get()
+    if not docs.exists:
+        raise HTTPException(status_code=404, detail="Item not found")
     for doc in docs:
         tempData = doc.to_dict()
         tempData['id'] = doc.id
         data.append(tempData)
-        print(f'{doc.id} => {doc.to_dict()}')
     return data
 
 @app.get("/data/{id}")
