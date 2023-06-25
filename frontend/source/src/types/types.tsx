@@ -27,3 +27,5 @@ export type Question = {
 export type NetworkImage = {
     url: string;
 };
+
+
