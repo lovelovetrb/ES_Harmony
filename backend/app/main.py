@@ -34,7 +34,7 @@ async def get_data():
     # Firestoreからデータを取得する処理
     collection_ref = db.collection("student")
     docs = collection_ref.get()
-    if not docs.exists:
+    if len(docs) == 0:
         raise HTTPException(status_code=404, detail="Item not found")
     for doc in docs:
         tempData = doc.to_dict()
