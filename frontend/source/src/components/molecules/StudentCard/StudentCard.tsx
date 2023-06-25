@@ -43,7 +43,7 @@ const StudentCard = ({ studentData }: props) => {
                             } else {
                                 return (
                                     <p>
-                                        📌マッチ度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌マッチ度:<span className={styles.evalSwitch_A}>A</span>
                                     </p>
                                 );
                             }
@@ -51,13 +51,13 @@ const StudentCard = ({ studentData }: props) => {
                             if (studentData.match_level > 25) {
                                 return (
                                     <p>
-                                        📌マッチ度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌マッチ度:<span className={styles.evalSwitch_B}>B</span>
                                     </p>
                                 );
                             } else {
                                 return (
                                     <p>
-                                        📌マッチ度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌マッチ度:<span className={styles.evalSwitch_C}>C</span>
                                     </p>
                                 );
                             }
@@ -71,13 +71,13 @@ const StudentCard = ({ studentData }: props) => {
                             if (studentData.AI_degree > 75) {
                                 return (
                                     <p>
-                                        📌AI度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_C}>C</span>
                                     </p>
                                 );
                             } else {
                                 return (
                                     <p>
-                                        📌AI度:<span className={styles.evalSwitch_A}>A</span>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_B}>B</span>
                                     </p>
                                 );
                             }
@@ -85,13 +85,13 @@ const StudentCard = ({ studentData }: props) => {
                             if (studentData.AI_degree > 25) {
                                 return (
                                     <p>
-                                        📌AI度:<span className={styles.evalSwitch_B}>B</span>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_A}>A</span>
                                     </p>
                                 );
                             } else {
                                 return (
                                     <p>
-                                        📌AI度:<span className={styles.evalSwitch_C}>C</span>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_S}>S</span>
                                     </p>
                                 );
                             }
