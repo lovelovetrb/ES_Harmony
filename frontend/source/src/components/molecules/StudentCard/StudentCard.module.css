@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,900&display=swap');
+
 .wrapper {
     border: 3px solid #000000;
     border-radius: 10px;
@@ -30,10 +32,35 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 30px;
+    font-size: 1.5rem;
 }
 
 .match_info h3 {
     margin: 5px 0;
+}
+
+.evalSwitch_S {
+    margin: 5px 0;
+    color: #DD54CF;
+    font-family: 'Rubik', sans-serif;
+}
+
+.evalSwitch_A {
+    margin: 5px 0;
+    color: #F5101E;
+    font-family: 'Rubik', sans-serif;
+}
+
+.evalSwitch_B {
+    margin: 5px 0;
+    color: #2BB939;
+    font-family: 'Rubik', sans-serif;
+}
+
+.evalSwitch_C {
+    margin: 5px 0;
+    color: #1043F5;
+    font-family: 'Rubik', sans-serif;
 }
 
 .judgeArea {
