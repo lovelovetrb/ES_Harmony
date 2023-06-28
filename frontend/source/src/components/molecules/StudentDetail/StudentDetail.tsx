@@ -22,7 +22,7 @@ export default function StudentDetail({ data }: props) {
                             {data.wrap_up.map((item: WrapUp, index: number) => {
                                 return (
                                     <div key={index}>
-                                        <li className={styles.subheading}>{`${item.question}`}</li> <p>・内容：{item.content}</p>{" "}
+                                        <h3 className={styles.subheading}>{`${item.question}`}</h3> <p>・内容：{item.content}</p>{" "}
                                     </div>
                                 );
                             })}
@@ -52,7 +52,7 @@ export default function StudentDetail({ data }: props) {
                         </div>
                     </div>
                     <div className={styles.ablityComposeText}>
-                        <h2 className={styles.heading}>オリジナリティ分析 オリジナリティ:{data.AI_degree}%</h2>
+                        <h2 className={styles.heading}>オリジナリティ分析 / オリジナリティ:{data.originality}%</h2>
                         <div className={styles.textArea}>
                             <div className={styles.analyzeArea} dangerouslySetInnerHTML={data.ability_to_compose_a_text} />
                             <ol className={styles.usage}>
