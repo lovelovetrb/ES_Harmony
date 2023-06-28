@@ -86,13 +86,19 @@ export default function Home({ studentData }: Props) {
                         </ButtonArea>
                         <div className={styles.cardArea}>
                             <motion.ol variants={list} initial="hidden" animate="visible">
-                                {studentData.map((one_studentData: StudentData, index: number) => (
-                                    <motion.li variants={item} key={index}>
-                                        <motion.div transition={{ duration: 0.25 }} whileHover={{ scale: 1.05 }} key={index}>
-                                            <StudentCard studentData={one_studentData} />
-                                        </motion.div>
-                                    </motion.li>
-                                ))}
+                                {studentData !== undefined ? (
+                                    <>
+                                        {studentData.map((one_studentData: StudentData, index: number) => (
+                                            <motion.li variants={item} key={index}>
+                                                <motion.div transition={{ duration: 0.25 }} whileHover={{ scale: 1.05 }} key={index}>
+                                                    <StudentCard studentData={one_studentData} />
+                                                </motion.div>
+                                            </motion.li>
+                                        ))}
+                                    </>
+                                ) : (
+                                    <></>
+                                )}
                             </motion.ol>
                         </div>
                     </div>

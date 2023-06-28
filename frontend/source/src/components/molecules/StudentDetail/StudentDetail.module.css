@@ -16,11 +16,11 @@
 
 .nameArea {
     color: #fffffe;
-    font-size: 1.5rem;
+    font-size: 35px;
     text-align: center;
     font-weight: 700;
     letter-spacing: 3px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 25px;
 }
 
@@ -54,7 +54,10 @@
 .box p {
     color: #094067;
     padding: 3px 0;
+    font-size: 25px;
+    font-family: "Murecho", sans-serif;
     font-weight: 700;
+    text-align: center;
     letter-spacing: 1px;
 }
 
@@ -68,12 +71,21 @@
     width: 45%;
 }
 
+.question .textArea {
+    height: 240px;
+    overflow: scroll;
+}
+
 .imageArea {
     width: 45%;
 }
 
-.imageArea div {
+.imageArea .textArea {
     padding: 2px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imageArea img {
@@ -83,8 +95,14 @@
 
 .subheading {
     margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    list-style: none;
+    counter-increment: cnt;
 }
-
+.subheading::before {
+    content:  counter(cnt) ". ";
+}
 .textArea {
     border: 5px solid #094067;
     border-radius: 10px;
@@ -94,21 +112,39 @@
 }
 
 .textArea p {
-  line-height: 2rem;
+    line-height: 2rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.analyzeArea h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.3rem;
+    margin-top: 1.3rem;
+}
+
+/* analyzeAreaのh2の1個目に対するcss */
+.analyzeArea h2:first-child {
+    margin-top: 0;
+}
+
+.analyzeArea p {
+    line-height: 2rem;
 }
 
 .usage {
-  margin-top: 1.3rem;
-  width: 250px;
+    margin-top: 3rem;
+    width: 250px;
 }
 
 .usage li {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .link {
-  color: #fffffe;
-  font-weight: 700;
-  margin-top: 1.3rem;
-  margin-left: .5rem;
+    color: #fffffe;
+    font-weight: 700;
+    margin-top: 1.3rem;
+    margin-left: 0.5rem;
 }

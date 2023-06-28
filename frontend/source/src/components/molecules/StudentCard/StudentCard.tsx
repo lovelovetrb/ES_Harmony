@@ -23,7 +23,7 @@ const StudentCard = ({ studentData }: props) => {
         <Link href={`/${studentData.id}`}>
             <div className={styles.wrapper} key={studentData.id} ref={targetRef}>
                 <div className={styles.icon}>
-                    <Image src="/icon.png" height={40} width={40} alt="icon" />
+                    <Image src="/icon.png" height={80} width={80} alt="icon" />
                 </div>
                 <div className={styles.student_info}>
                     <h3>🧑‍🎓{studentData.name} さん</h3>

@@ -15,7 +15,7 @@ type ability_to_compose_a_text = {
 };
 
 export type WrapUp = {
-    genre: string;
+    question: string;
     content: string;
 };
 
