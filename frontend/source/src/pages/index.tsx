@@ -4,7 +4,6 @@ import { GetStaticProps } from "next";
 
 import styles from "@/styles/Home.module.css";
 
-import Header from "@/components/Header/Header";
 import ButtonArea from "@/components/molecules/ButtonArea/ButtonArea";
 import Button from "@/components/atoms/Button/Button";
 import StudentCard from "@/components/molecules/StudentCard/StudentCard";
@@ -43,9 +42,9 @@ export default function Home({ studentData }: Props) {
 
     studentData.sort((a, b) => {
         if (order === "desc") {
-            return a[sort as keyof StudentData] < b[sort as keyof StudentData] ? -1 : 1;
+            return a[sort as keyof StudentData] < b[sort as keyof StudentData] ? 1 : -1;
         } else {
-            return b[sort as keyof StudentData] > a[sort as keyof StudentData] ? 1 : -1;
+            return b[sort as keyof StudentData] > a[sort as keyof StudentData] ? -1 : 1;
         }
     });
 
@@ -76,7 +75,6 @@ export default function Home({ studentData }: Props) {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <main className={`${styles.main} ${notojp.variable}`}>
-                    <Header />
                     <div className={styles.container}>
                         <ButtonArea>
                             <Button

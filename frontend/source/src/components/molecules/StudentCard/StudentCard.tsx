@@ -43,7 +43,7 @@ const StudentCard = ({ studentData }: props) => {
                             } else {
                                 return (
                                     <p>
-                                        📌マッチ度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌マッチ度:<span className={styles.evalSwitch_A}>A</span>
                                     </p>
                                 );
                             }
@@ -51,13 +51,13 @@ const StudentCard = ({ studentData }: props) => {
                             if (studentData.match_level > 25) {
                                 return (
                                     <p>
-                                        📌マッチ度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌マッチ度:<span className={styles.evalSwitch_B}>B</span>
                                     </p>
                                 );
                             } else {
                                 return (
                                     <p>
-                                        📌マッチ度:<span className={styles.evalSwitch_S}>S</span>
+                                        📌マッチ度:<span className={styles.evalSwitch_C}>C</span>
                                     </p>
                                 );
                             }
@@ -66,37 +66,25 @@ const StudentCard = ({ studentData }: props) => {
 
                     {/* 一番外側の中括弧はJSXに式を埋め込むためのもの */}
                     {/* 一番外側の中括弧で囲まれた部分が即時関数 */}
-                    {(() => {
-                        if (studentData.AI_degree > 50) {
-                            if (studentData.AI_degree > 75) {
-                                return (
-                                    <p>
-                                        📌AI度:<span className={styles.evalSwitch_S}>S</span>
-                                    </p>
-                                );
+                    <p>
+                        📌AI度:
+                        {(() => {
+                            if (studentData.AI_degree > 50) {
+                                if (studentData.AI_degree > 75) {
+                                    return <span className={styles.evalSwitch_S}>S</span>;
+                                } else {
+                                    return <span className={styles.evalSwitch_A}>A</span>;
+                                }
+                reuturn ()
                             } else {
-                                return (
-                                    <p>
-                                        📌AI度:<span className={styles.evalSwitch_A}>A</span>
-                                    </p>
-                                );
+                                if (studentData.AI_degree > 25) {
+                                    return <span className={styles.evalSwitch_B}>B</span>;
+                                } else {
+                                    return <span className={styles.evalSwitch_C}>C</span>;
+                                }
                             }
-                        } else {
-                            if (studentData.AI_degree > 25) {
-                                return (
-                                    <p>
-                                        📌AI度:<span className={styles.evalSwitch_B}>B</span>
-                                    </p>
-                                );
-                            } else {
-                                return (
-                                    <p>
-                                        📌AI度:<span className={styles.evalSwitch_C}>C</span>
-                                    </p>
-                                );
-                            }
-                        }
-                    })()}
+                        })()}
+                    </p>
                 </div>
                 <div className={styles.judgeArea}>
                     <p>👀詳細を見る→</p>

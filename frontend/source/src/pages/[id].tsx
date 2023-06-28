@@ -1,7 +1,4 @@
-import Header from "@/components/Header/Header";
 import StudentDetail from "@/components/molecules/StudentDetail/StudentDetail";
-
-import Link from "next/link";
 
 import { motion } from "framer-motion";
 
@@ -16,7 +13,6 @@ const id = ({ data }: Props) => {
     return (
         <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
-                <Header />
                 <StudentDetail data={data} />
             </motion.div>
         </>
