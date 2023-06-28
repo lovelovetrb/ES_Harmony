@@ -66,25 +66,37 @@ const StudentCard = ({ studentData }: props) => {
 
                     {/* 一番外側の中括弧はJSXに式を埋め込むためのもの */}
                     {/* 一番外側の中括弧で囲まれた部分が即時関数 */}
-                    <p>
-                        📌AI度:
-                        {(() => {
-                            if (studentData.AI_degree > 50) {
-                                if (studentData.AI_degree > 75) {
-                                    return <span className={styles.evalSwitch_S}>S</span>;
-                                } else {
-                                    return <span className={styles.evalSwitch_A}>A</span>;
-                                }
-                reuturn ()
+                    {(() => {
+                        if (studentData.AI_degree > 50) {
+                            if (studentData.AI_degree > 75) {
+                                return (
+                                    <p>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_C}>C</span>
+                                    </p>
+                                );
                             } else {
-                                if (studentData.AI_degree > 25) {
-                                    return <span className={styles.evalSwitch_B}>B</span>;
-                                } else {
-                                    return <span className={styles.evalSwitch_C}>C</span>;
-                                }
+                                return (
+                                    <p>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_B}>B</span>
+                                    </p>
+                                );
                             }
-                        })()}
-                    </p>
+                        } else {
+                            if (studentData.AI_degree > 25) {
+                                return (
+                                    <p>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_A}>A</span>
+                                    </p>
+                                );
+                            } else {
+                                return (
+                                    <p>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_S}>S</span>
+                                    </p>
+                                );
+                            }
+                        }
+                    })()}
                 </div>
                 <div className={styles.judgeArea}>
                     <p>👀詳細を見る→</p>

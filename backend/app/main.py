@@ -59,10 +59,10 @@ async def append_data():
     # データベースに追加
     doc_ref = db.collection('student').document()
     doc_ref.set({"NetworkImage":{"url":"https://www.notion.so/6-16-698927660ec446c5af6b7dc62a9f8d3c"},
-            "name":"田中太郎",
-            "school":"京都大学",
-            "match_level":50,
-            "AI_degree":50,
+            "name":"佐藤 進",
+            "school":"山梨大学",
+            "match_level":10,
+            "AI_degree":10,
             "wrap_up":[{"genre":"志望動機",
                         "content":"金が欲しいから"},
                         {"genre":"技術スタック",
