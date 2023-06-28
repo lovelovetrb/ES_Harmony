@@ -4,7 +4,7 @@ export interface StudentData {
     name: string;
     school: string;
     match_level: number;
-    AI_degree: number;
+    originality: number;
     wrap_up: WrapUp[];
     questions: Question[];
     ability_to_compose_a_text: ability_to_compose_a_text;

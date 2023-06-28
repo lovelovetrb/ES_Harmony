@@ -67,31 +67,31 @@ const StudentCard = ({ studentData }: props) => {
                     {/* 一番外側の中括弧はJSXに式を埋め込むためのもの */}
                     {/* 一番外側の中括弧で囲まれた部分が即時関数 */}
                     {(() => {
-                        if (studentData.AI_degree > 50) {
-                            if (studentData.AI_degree > 75) {
+                        if (studentData.originality > 50) {
+                            if (studentData.originality > 75) {
                                 return (
                                     <p>
-                                        📌オリジナリティ:<span className={styles.evalSwitch_C}>C</span>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_S}>S</span>
                                     </p>
                                 );
                             } else {
-                                return (
-                                    <p>
-                                        📌オリジナリティ:<span className={styles.evalSwitch_B}>B</span>
-                                    </p>
-                                );
-                            }
-                        } else {
-                            if (studentData.AI_degree > 25) {
                                 return (
                                     <p>
                                         📌オリジナリティ:<span className={styles.evalSwitch_A}>A</span>
                                     </p>
                                 );
+                            }
+                        } else {
+                            if (studentData.originality > 25) {
+                                return (
+                                    <p>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_B}>B</span>
+                                    </p>
+                                );
                             } else {
                                 return (
                                     <p>
-                                        📌オリジナリティ:<span className={styles.evalSwitch_S}>S</span>
+                                        📌オリジナリティ:<span className={styles.evalSwitch_C}>C</span>
                                     </p>
                                 );
                             }
