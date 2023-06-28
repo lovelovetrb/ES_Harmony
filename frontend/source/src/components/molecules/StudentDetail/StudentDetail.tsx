@@ -15,7 +15,6 @@ export default function StudentDetail({ data }: props) {
                 <div className={styles.inner}>
                     <div className={styles.box}>
                         <p>{data.match_level}%マッチ</p>
-                        <p>Ai度:{data.AI_degree}%</p>
                     </div>
                     <div className={styles.wrap_up}>
                         <h2 className={styles.heading}>要約</h2>
@@ -35,7 +34,9 @@ export default function StudentDetail({ data }: props) {
                     <div className={styles.flex_column}>
                         <div className={styles.imageArea}>
                             <h2 className={styles.heading}>ネットワーク図</h2>
-                            <div className={styles.textArea}>写真</div>
+                            <div className={styles.textArea}>
+                                <img src={data.NetworkImage.url} alt="ネットワーク図" />
+                            </div>
                         </div>
                         <div className={styles.question}>
                             <h2 className={styles.heading}>質問</h2>
@@ -54,7 +55,7 @@ export default function StudentDetail({ data }: props) {
                         </div>
                     </div>
                     <div className={styles.ablityComposeText}>
-                        <h2 className={styles.heading}>文章構力分析</h2>
+                        <h2 className={styles.heading}>オリジナリティ分析     オリジナリティ:{data.AI_degree}%</h2>
                         <div className={styles.textArea}>
                             <p dangerouslySetInnerHTML={data.ability_to_compose_a_text} />
                             <ol className={styles.usage}>

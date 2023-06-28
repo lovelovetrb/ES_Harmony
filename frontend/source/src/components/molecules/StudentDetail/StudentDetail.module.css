@@ -43,9 +43,9 @@
 .box {
     margin-left: auto;
     margin-right: 10px;
-    padding: 10px 15px;
-    width: 150px;
-    text-align: center;
+    padding: 20px 15px;
+    width: 250px;
+    text-align: left;
     border: 5px solid #2266a6;
     border-radius: 10px;
     background-color: #fffffe;
@@ -70,6 +70,15 @@
 
 .imageArea {
     width: 45%;
+}
+
+.imageArea div {
+    padding: 2px;
+}
+
+.imageArea img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 .subheading {

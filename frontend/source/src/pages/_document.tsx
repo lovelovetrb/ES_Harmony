@@ -2,9 +2,9 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
     return (
-        <Html lang="en">
+        <Html lang="ja">
             <Head>
-                <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Rubik:wght@400;500;900;&display=swap" rel="stylesheet" />
             </Head>
             <body>
                 <Main />
