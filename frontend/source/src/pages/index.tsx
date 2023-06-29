@@ -28,7 +28,7 @@ type Props = {
 
 export default function Home({ studentData }: Props) {
     const [sort, setSort] = useState<string>("match_level");
-    const [order, setOrder] = useState<string>("asc");
+    const [order, setOrder] = useState<string>("desc");
 
     const handleSort = (field: keyof StudentData) => {
         console.log(field);
@@ -82,7 +82,7 @@ export default function Home({ studentData }: Props) {
                                 onClickFunc={handleSort}
                                 field={"match_level"}
                             />
-                            <Button text={`AI度 ${sort == "AI_degree" && order == "asc" ? "↑" : "↓"}`} onClickFunc={handleSort} field={"AI_degree"} />
+                            <Button text={`オリジナリティ ${sort == "originality" && order == "asc" ? "↑" : "↓"}`} onClickFunc={handleSort} field={"originality"} />
                         </ButtonArea>
                         <div className={styles.cardArea}>
                             <motion.ol variants={list} initial="hidden" animate="visible">

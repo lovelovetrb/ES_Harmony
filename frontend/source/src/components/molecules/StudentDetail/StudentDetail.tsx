@@ -14,10 +14,10 @@ export default function StudentDetail({ data }: props) {
                 <div className={styles.nameArea}>{data.name} さんのES</div>
                 <div className={styles.inner}>
                     <div className={styles.box}>
-                        <p>{data.match_level}%マッチ</p>
+                        <p>{data.match_level}%マッチ📌</p>
                     </div>
                     <div className={styles.wrap_up}>
-                        <h2 className={styles.heading}>要約</h2>
+                        <h2 className={styles.heading}>🤩要約</h2>
                         <div className={styles.textArea}>
                             {data.wrap_up.map((item: WrapUp, index: number) => {
                                 return (
@@ -30,13 +30,13 @@ export default function StudentDetail({ data }: props) {
                     </div>
                     <div className={styles.flex_column}>
                         <div className={styles.imageArea}>
-                            <h2 className={styles.heading}>ネットワーク図</h2>
+                            <h2 className={styles.heading}>🌍 ネットワーク図</h2>
                             <div className={styles.textArea}>
                                 <img src={data.NetworkImage.url} alt="ネットワーク図" />
                             </div>
                         </div>
                         <div className={styles.question}>
-                            <h2 className={styles.heading}>質問</h2>
+                            <h2 className={styles.heading}>🧑🏻‍💻質問</h2>
                             <div className={styles.textArea}>
                                 {data.questions.map((item: Question, index: number) => {
                                     return (
@@ -52,7 +52,7 @@ export default function StudentDetail({ data }: props) {
                         </div>
                     </div>
                     <div className={styles.ablityComposeText}>
-                        <h2 className={styles.heading}>オリジナリティ分析 / オリジナリティ:{data.originality}%</h2>
+                        <h2 className={styles.heading}>📝オリジナリティ分析 / オリジナリティ:{data.originality}%</h2>
                         <div className={styles.textArea}>
                             <div className={styles.analyzeArea} dangerouslySetInnerHTML={data.ability_to_compose_a_text} />
                             <ol className={styles.usage}>

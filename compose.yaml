@@ -25,7 +25,7 @@ services:
       - ./backend/app:/usr/src/backend/app
       - site-packages:/usr/local/lib/python3.9/site-packages
     ports:
-      - 5000:5000
+      - 5002:5002
 
 volumes:
     node_modules:
