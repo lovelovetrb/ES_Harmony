@@ -1,12 +1,9 @@
-## 翻訳 ×単語帳 App
-- 文章の翻訳からその文章にあった単語の翻訳を出力し、そこから自動的に単語帳を生成できます。
-- 自分が特に覚えたい意味で単語を学習、ストックすることができます。
+# ES Harmony
+就活生から収集されたESをAIを用いて分析します。
 
-## 仕組み
+## Deploy to Google Cloud Run
 
-## 技術要項
-
-## 使い方
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
 
 ## 作成者
 静岡大学情報学部行動情報学科
