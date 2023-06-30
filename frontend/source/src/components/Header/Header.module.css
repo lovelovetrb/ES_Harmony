@@ -1,0 +1,23 @@
+.wrapper {
+    width: 100%;
+    background-color: #73bcff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem 0;
+}
+
+.title {
+    font-family: "Caprasimo", cursive;
+    font-size: 70px;
+    text-align: center;
+    color: #fffffe;
+    -webkit-text-stroke: 1.5px #000000;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-family: var(--font-notojp);
+    font-size: 25px;
+}
