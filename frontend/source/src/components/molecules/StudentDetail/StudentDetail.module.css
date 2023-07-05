@@ -67,14 +67,11 @@
     justify-content: space-between;
 }
 
-.question {
-    width: 50%;
-}
 
-.question .textArea {
-    height: 240px;
-    overflow: scroll;
-}
+/* .question .textArea { */
+/*     height: 240px; */
+/*     overflow: scroll; */
+/* } */
 
 .imageArea {
     width: 45%;
