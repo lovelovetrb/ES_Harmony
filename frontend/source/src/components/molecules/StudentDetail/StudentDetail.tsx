@@ -28,13 +28,13 @@ export default function StudentDetail({ data }: props) {
                     </div>
                     <div className={styles.flex_column}>
                         <div className={styles.imageArea}>
-                            <h2 className={styles.heading}>🌍 ネットワーク図</h2>
+                            <h2 className={styles.heading}>🌍 この人を表す言葉</h2>
                             <div className={styles.textArea}>
                                 <img src={data.networkImage.url} alt="ネットワーク図" />
                             </div>
                         </div>
                         <div className={styles.imageArea}>
-                            <h2 className={styles.heading}>🌍 ネットワーク図</h2>
+                            <h2 className={styles.heading}>🔥 この人が伝えたいこと</h2>
                             <div className={styles.textArea}>
                                 <img src={data.originalNetworkImage.url} alt="ネットワーク図" />
                             </div>
