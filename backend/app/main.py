@@ -58,13 +58,14 @@ async def get_one_data(id: str):
 async def append_data():
     # データベースに追加
     doc_ref = db.collection('student').document()
-    doc_ref.set({"NetworkImage":{"url":"https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/es_wordcloud.png?alt=media&token=9aeec591-c87b-46e5-b6c0-24853387ca5c"},
-            "name":"荒沢康平",
+    doc_ref.set({"networkImage":{"url":"https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/es_wordcloud.png?alt=media&token=9aeec591-c87b-46e5-b6c0-24853387ca5c"},
+"originalNetworkImage":{"url":"https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/es_wordcloud_original.png?alt=media&token=3b5a27f9-21bf-4b65-a0dd-9898a66989c1"},
+            "name":"馬場海好",
             "school":"静岡大学",
             "match_level":90,
             "originality":90,
-            "wrap_up":[{"question":"サイバーエージェントを志望する動機を教えてください。",
-                        "content":"就活生がサイバーエージェントを志望する理由は、一つ目には同社の幅広い事業領域と新規事業への積極性が引き寄せていることで、これは彼の目指す「多角的な視点を持つ問題解決能力」の成長に寄与すると感じているからです。二つ目の理由は、同社が様々な技術領域（バックエンド、フロントエンド、インフラ）で経験を積む機会を提供し、彼が目指す全面的なエンジニアになるためのスキルを磨ける環境を提供しているからです。これらの理由から、彼は自身の将来の成長とキャリアパスにおいてサイバーエージェントが最適な場所であると考えています。"},
+            "wrap_up":[{"question":"◯◯を志望する動機を教えてください。",
+                        "content":"就活生が◯◯を志望する理由は、一つ目には同社の幅広い事業領域と新規事業への積極性が引き寄せていることで、これは彼の目指す「多角的な視点を持つ問題解決能力」の成長に寄与すると感じているからです。二つ目の理由は、同社が様々な技術領域（バックエンド、フロントエンド、インフラ）で経験を積む機会を提供し、彼が目指す全面的なエンジニアになるためのスキルを磨ける環境を提供しているからです。これらの理由から、彼は自身の将来の成長とキャリアパスにおいて◯◯が最適な場所であると考えています。"},
                         {"question":"長期間（目安としては1ヶ月以上）にわたってグループで協調しながら何かに取り組んだエピソードを200文字程度で教えてください。他の回答と重複していても構いません。（技術的なエピソード以外でも可）",
                         "content":"ベンチャー企業で医療用診断ソフトウェアの認証申請リーダーを務め、行政書士や社員と協働した。初めは認証申請や商品リスク分析について知識がなく苦労したが、自己学習や現地調査を通じて解決策を見つけた。この経験が課題解決能力とスピード感を向上させ、現在活動を進めるための基盤を築いた。"}],
             "questions":[{"genre":"【個人の目指す姿】",

@@ -30,13 +30,13 @@ export default function StudentDetail({ data }: props) {
                         <div className={styles.imageArea}>
                             <h2 className={styles.heading}>🌍 ネットワーク図</h2>
                             <div className={styles.textArea}>
-                                <img src={data.NetworkImage.url} alt="ネットワーク図" />
+                                <img src={data.networkImage.url} alt="ネットワーク図" />
                             </div>
                         </div>
                         <div className={styles.imageArea}>
                             <h2 className={styles.heading}>🌍 ネットワーク図</h2>
                             <div className={styles.textArea}>
-                                <img src={data.NetworkImage.url} alt="ネットワーク図" />
+                                <img src={data.originalNetworkImage.url} alt="ネットワーク図" />
                             </div>
                         </div>
                     </div>

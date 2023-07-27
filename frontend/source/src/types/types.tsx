@@ -1,6 +1,7 @@
 export interface StudentData {
     id: string;
-    NetworkImage: NetworkImage;
+    networkImage: NetworkImage;
+    originalNetworkImage: NetworkImage;
     name: string;
     school: string;
     match_level: number;
@@ -27,5 +28,3 @@ export type Question = {
 export type NetworkImage = {
     url: string;
 };
-
-
