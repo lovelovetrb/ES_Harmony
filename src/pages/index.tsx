@@ -31,7 +31,6 @@ export default function Home({ studentData }: Props) {
     const [order, setOrder] = useState<string>("desc");
 
     const handleSort = (field: keyof StudentData) => {
-        console.log(field);
         if (field === sort) {
             setOrder(order === "asc" ? "desc" : "asc");
         } else {
