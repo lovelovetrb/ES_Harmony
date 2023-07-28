@@ -1,5 +1,5 @@
 export interface StudentData {
-    id: string;
+    id?: string;
     networkImage: NetworkImage;
     originalNetworkImage: NetworkImage;
     name: string;
@@ -22,7 +22,7 @@ export type WrapUp = {
 
 export type Question = {
     genre: string;
-    content: string[];
+    content: string;
 };
 
 export type NetworkImage = {
