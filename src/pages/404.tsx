@@ -1,4 +1,3 @@
-import Header from "@/components/Header/Header";
 import { motion } from "framer-motion";
 
 const _404 = () => {

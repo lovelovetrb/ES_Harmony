@@ -4,8 +4,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import admin from "firebase-admin";
 import { cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { collection } from "firebase/firestore";
-import { addDoc } from "firebase/firestore";
 
 import { StudentData } from "@/types/types";
 
