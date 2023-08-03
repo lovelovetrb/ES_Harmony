@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 import { StudentData } from "@/types/types";
 import { getData } from "@/lib/getData";
 
+import { Zen_Kaku_Gothic_New } from "next/font/google";
+
+const zenkaku = Zen_Kaku_Gothic_New({
+  weight: ["500"],
+  subsets: ["latin"],
+});
+
 type Props = {
   data: StudentData;
 };
@@ -17,6 +24,7 @@ const id = ({ data }: Props) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.15 }}
+        className={zenkaku.className}
       >
         <StudentDetail data={data} />
       </motion.div>
@@ -25,23 +33,15 @@ const id = ({ data }: Props) => {
 };
 
 export const getStaticPaths = async () => {
-  const studentData: any | StudentData[] = await getData();
-  const studentDataArray = Array.isArray(studentData)
-    ? studentData
-    : [studentData];
-  const paths = studentDataArray.map((data: StudentData) => ({
+  const studentData: any = await getData();
+  const paths = studentData.map((data: StudentData) => ({
     params: { id: data.id },
   }));
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async ({
-  params,
-}: {
-  params: { id: string };
-}) => {
-  const data: any = await getData(params.id);
-  const studentData = Array.isArray(data) ? data[0] : data;
+export const getStaticProps = async ({ params }: { params: { id: string } }) => {
+  const studentData: any = await getData(params.id);
   return {
     props: { data: studentData },
     revalidate: 60,

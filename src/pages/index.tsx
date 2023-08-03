@@ -11,15 +11,14 @@ import StudentCard from "@/components/molecules/StudentCard/StudentCard";
 import { StudentData } from "@/types/types";
 import { getData } from "@/lib/getData";
 
-import { Noto_Sans_JP } from "next/font/google";
+import { Zen_Kaku_Gothic_New } from "next/font/google";
 
 import { motion } from "framer-motion";
 
-const notojp = Noto_Sans_JP({
-  weight: ["400", "500", "700"],
+
+const zenkaku = Zen_Kaku_Gothic_New({
+  weight: ["500"],
   subsets: ["latin"],
-  variable: "--font-notojp",
-  display: "swap",
 });
 
 type Props = {
@@ -44,13 +43,9 @@ export default function Home({ studentData }: Props) {
 
   studentData.sort((a, b) => {
     if (order === "desc") {
-      return a[sort] < b[sort]
-        ? 1
-        : -1;
+      return a[sort] < b[sort] ? 1 : -1;
     } else {
-      return b[sort] > a[sort]
-        ? -1
-        : 1;
+      return b[sort] > a[sort] ? -1 : 1;
     }
   });
 
@@ -78,6 +73,7 @@ export default function Home({ studentData }: Props) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.15 }}
+        className={zenkaku.className}
       >
         <Head>
           <title>ES Harmony</title>
@@ -85,20 +81,16 @@ export default function Home({ studentData }: Props) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className={`${styles.main} ${notojp.variable}`}>
+        <main className={`${styles.main}`}>
           <div className={styles.container}>
             <ButtonArea>
               <Button
-                text={`マッチ度 ${
-                  sort == "match_level" && order == "asc" ? "↑" : "↓"
-                }`}
+                text={`マッチ度 ${sort == "match_level" && order == "asc" ? "↑" : "↓"}`}
                 onClickFunc={handleSort}
                 field={"match_level"}
               />
               <Button
-                text={`オリジナリティ ${
-                  sort == "originality" && order == "asc" ? "↑" : "↓"
-                }`}
+                text={`オリジナリティ ${sort == "originality" && order == "asc" ? "↑" : "↓"}`}
                 onClickFunc={handleSort}
                 field={"originality"}
               />
@@ -107,19 +99,13 @@ export default function Home({ studentData }: Props) {
               <motion.ol variants={list} initial="hidden" animate="visible">
                 {studentData !== undefined ? (
                   <>
-                    {studentData.map(
-                      (one_studentData: StudentData, index: number) => (
-                        <motion.li variants={item} key={index}>
-                          <motion.div
-                            transition={{ duration: 0.25 }}
-                            whileHover={{ scale: 1.05 }}
-                            key={index}
-                          >
-                            <StudentCard studentData={one_studentData} />
-                          </motion.div>
-                        </motion.li>
-                      )
-                    )}
+                    {studentData.map((one_studentData: StudentData, index: number) => (
+                      <motion.li variants={item} key={index}>
+                        <motion.div transition={{ duration: 0.25 }} whileHover={{ scale: 1.05 }} key={index}>
+                          <StudentCard studentData={one_studentData} />
+                        </motion.div>
+                      </motion.li>
+                    ))}
                   </>
                 ) : (
                   <></>
