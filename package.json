@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "es-harmony",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/firestore": "^4.1.0",
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "eslint-config-next": "13.3.1",
-    "firebase": "^10.1.0",
     "firebase-admin": "^11.10.1",
     "framer-motion": "^10.12.16",
     "next": "13.3.1",
@@ -21,11 +21,12 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.6.0",
-    "@typescript-eslint/parser": "^5.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.33.0",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4"
   }
