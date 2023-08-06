@@ -17,7 +17,7 @@ export default function StudentDetail({ data }: props) {
             <p>{data.match_level}%マッチ📌</p>
           </div>
           <div className={styles.ablityComposeText}>
-            <h2 className={styles.heading}>📝オリジナリティ分析 / オリジナリティ:{data.originality}%</h2>
+            <h2 className={styles.heading}>📝オリジナリティ分析 / オリジナリティ: {data.originality}%</h2>
             <div className={styles.textArea}>
               <div className={styles.analyzeArea} dangerouslySetInnerHTML={data.ability_to_compose_a_text} />
               <ol className={styles.usage}>

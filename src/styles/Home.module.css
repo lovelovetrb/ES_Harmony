@@ -7,3 +7,9 @@
 .id_page_container {
     margin: 3rem auto;
 }
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+}

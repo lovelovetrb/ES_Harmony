@@ -15,7 +15,6 @@ import { Zen_Kaku_Gothic_New } from "next/font/google";
 
 import { motion } from "framer-motion";
 
-
 const zenkaku = Zen_Kaku_Gothic_New({
   weight: ["500"],
   subsets: ["latin"],
@@ -81,7 +80,7 @@ export default function Home({ studentData }: Props) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className={`${styles.main}`}>
+        <main>
           <div className={styles.container}>
             <ButtonArea>
               <Button
