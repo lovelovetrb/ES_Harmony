@@ -1,11 +1,15 @@
 .container {
     max-width: 60%;
     margin-inline: auto;
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .id_page_container {
-  margin: 3rem auto;
+    margin: 3rem auto;
 }
 
-
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+}

@@ -1,13 +1,12 @@
 .highlight {
-  background: linear-gradient(transparent 40%, #f6ff5f 40%);
+  background: linear-gradient(transparent 20%, #f6ff5f 20%);
 }
 
 .ai_highlight {
-  background: linear-gradient(transparent 40%, #ffce9e 40%);
+  background: linear-gradient(transparent 20%, #ffce9e 20%);
 }
 
 body{
     background-color: #eff7ff;
-    font-family: "Rubik", sans-serif;
 }
 

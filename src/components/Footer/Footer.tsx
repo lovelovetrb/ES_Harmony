@@ -1,9 +1,16 @@
 import styles from "@/components/Footer/Footer.module.css";
+import { Noto_Sans_JP } from "next/font/google";
+
+const notojp = Noto_Sans_JP({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-notojp",
+  display: "swap",
+});
 
 const Footer = () => {
     return (
-        <div className={styles.wrapper}>
-            {/* TODO: 各ページ用意？？？ */}
+        <div className={`${styles.wrapper} ${notojp.variable}`}>
             <ul className={styles.list}>
                 <li>ES Harmonyについて</li>
                 <li>AI技術</li>
