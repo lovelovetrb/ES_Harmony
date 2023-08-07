@@ -12,6 +12,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const data: StudentData = {
+    icon:"https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/icon.png?alt=media&token=bb5fbeab-ab1e-4b51-9aba-45df7df16b08",
     networkImage: {
       url: "https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/es_wordcloud.png?alt=media&token=c46e18c9-2939-41d3-a426-8b42ac5ae411",
     },
