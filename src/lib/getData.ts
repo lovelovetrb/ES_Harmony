@@ -29,7 +29,7 @@ export async function getData(id?: string) {
     const returnData = data.data();
     if (returnData != undefined) {
       returnData.id = id;
-      return returnData
+      return returnData;
     }
   }
 }
