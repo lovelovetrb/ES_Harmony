@@ -26,6 +26,10 @@ export async function getData(id?: string) {
     return result;
   } else {
     const data = await store.collection("student").doc(id).get();
-    return data.data();
+    const returnData = data.data();
+    if (returnData != undefined) {
+      returnData.id = id;
+      return returnData
+    }
   }
 }
