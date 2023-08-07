@@ -39,6 +39,22 @@
     width: 48.5%;
 }
 
+.icon_area {
+    display: flex;
+    justify-content: center;
+}
+.basic_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 25px;
+}
+
+.basic_info li {
+    margin-top: 20px;
+}
+
 .imgArea img {
     height: 100%;
     width: 100%;

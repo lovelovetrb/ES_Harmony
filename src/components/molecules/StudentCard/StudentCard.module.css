@@ -10,22 +10,20 @@
 }
 
 .icon {
-    display: flex;
-    align-items: center;
-}
-
-.student_info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    object-fit: contain;
+    position: relative !important;
+    width: auto !important;
+    height: 150px !important;
     margin-left: 50px;
 }
 
+.student_info,
 .match_info {
+    font-size: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-left: 50px;
+    justify-content: space-around;
+    margin-left: 150px;
 }
 
 .evalSwitch_S {
