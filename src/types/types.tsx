@@ -4,6 +4,7 @@ export interface firebaseData {
 }
 export interface StudentData {
   id?: string;
+  icon: string;
   networkImage: NetworkImage;
   originalNetworkImage: NetworkImage;
   name: string;
