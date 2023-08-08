@@ -42,13 +42,23 @@
 .icon_area {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
+
+.icon {
+    object-fit: contain;
+    position: relative !important;
+    width: auto !important;
+    height: 150px !important;
+}
+
 .basic_info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .basic_info li {
@@ -59,6 +69,10 @@
     height: 100%;
     width: 100%;
     border-radius: 10px;
+}
+
+.match_text {
+    height: auto;
 }
 
 .subheading {

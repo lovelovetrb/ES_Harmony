@@ -83,7 +83,6 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       }
     }
   });
-
   return {
     props: { afterStudentID, data: studentData[0], beforeStudentID },
     revalidate: 60,

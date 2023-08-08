@@ -27,15 +27,15 @@ export default function StudentDetail({ data }: props) {
                 <div className={styles.flex_column}>
                   <div className={styles.two_column}>
                     <div className={styles.icon_area}>
-                      <Image src={data.icon} height={361} width={266} alt="icon" />
+                      <Image className={styles.icon} src={data.icon} fill alt="icon" />
                     </div>
                   </div>
                   <div className={styles.two_column}>
                     <ol className={styles.basic_info}>
-                      <li>📌 名前：{data.name}</li>
-                      <li>🏫 学校：{data.school}</li>
-                      <li>🚩 マッチ度：{data.match_level}%</li>
-                      <li>🤖 ESのオリジナリティ度：{data.originality}%</li>
+                      <li>名前：{data.name}</li>
+                      <li>学校：{data.school}</li>
+                      <li>マッチ度：{data.match_level}</li>
+                      <li>オリジナリティ：{data.originality}</li>
                     </ol>
                   </div>
                 </div>
@@ -58,8 +58,10 @@ export default function StudentDetail({ data }: props) {
               </BoxArea>
             </div>
             <div className={styles.two_column}>
-              <BoxArea heading="🔥 マッチした要素">
-                <p>マッチの根拠になった文章が入ります</p>
+              <BoxArea heading="🔥 マッチ度の高いESの文章" adjust_height={true}>
+                <div className={styles.match_text}>
+                  <p>マッチの根拠になった文章が入ります</p>
+                </div>
               </BoxArea>
             </div>
           </div>

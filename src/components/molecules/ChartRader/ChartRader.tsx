@@ -36,12 +36,12 @@ const ChartRadar = ({ studentData }: Props) => {
         beginAtZero: true,
         ticks: {
           font: {
-            size: 18,
+            size: 0,
           },
         },
         pointLabels: {
           font: {
-            size: 20,
+            size: 15,
           },
         },
       },
@@ -59,7 +59,7 @@ const ChartRadar = ({ studentData }: Props) => {
 
   return (
     <div className={styles.chart}>
-      <Radar data={data} options={options} height={100}/>
+      <Radar data={data} options={options} />
     </div>
   );
 };
