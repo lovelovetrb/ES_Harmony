@@ -73,23 +73,27 @@
 
 .match_text {
     height: auto;
+    font-size: 18px;
+    line-height: 180%;
 }
 
 .subheading {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 600;
 }
 
 .question_item {
-    margin-top: 10px;
+    font-size: 18px;
+    margin-top: 15px;
     margin-left: 15px;
+    line-height: 180%;
 }
 
 .analyzeArea h2 {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 25px;
     margin-bottom: 1.3rem;
     margin-top: 1.3rem;
 }

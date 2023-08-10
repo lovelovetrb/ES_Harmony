@@ -58,9 +58,9 @@ export default function StudentDetail({ data }: props) {
               </BoxArea>
             </div>
             <div className={styles.two_column}>
-              <BoxArea heading="🔥 マッチ度の高いESの文章" adjust_height={true}>
+              <BoxArea heading={`🔥 マッチする${data.name}さんの特徴`} adjust_height={true}>
                 <div className={styles.match_text}>
-                  <p>マッチの根拠になった文章が入ります</p>
+                  {data.match_individuality ? (<p>{data.match_individuality}</p>):<p>マッチする特徴が見つかりませんでした😢</p>}
                 </div>
               </BoxArea>
             </div>

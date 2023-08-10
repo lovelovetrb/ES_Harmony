@@ -14,6 +14,7 @@ export interface StudentData {
   wrap_up: WrapUp[];
   questions: Question[];
   ability_to_compose_a_text: ability_to_compose_a_text;
+  match_individuality: string;
 }
 
 type ability_to_compose_a_text = {
