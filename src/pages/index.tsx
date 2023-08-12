@@ -81,6 +81,7 @@ export default function Home({ studentData }: Props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
+          <p className={styles.mobile_warning}>PCからご覧ください</p>
           <div className={styles.container}>
             <ButtonArea>
               <Button
