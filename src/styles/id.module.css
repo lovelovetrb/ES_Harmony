@@ -15,3 +15,10 @@
     background-color: #094067;
     color: #fffffe;
 }
+
+@media (max-width: 1024px) {
+    .button_area {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

@@ -124,8 +124,14 @@
     margin-left: 0.5rem;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1024px) {
     .main {
+        width: 100%;
+    }
+    .flex_column {
+        flex-direction: column;
+    }
+    .two_column {
         width: 100%;
     }
 }
