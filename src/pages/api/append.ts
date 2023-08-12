@@ -7,11 +7,10 @@ import { getFirestore } from "firebase-admin/firestore";
 
 import { StudentData } from "@/types/types";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const data: StudentData = {
+    icon: "https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/icon.png?alt=media&token=bb5fbeab-ab1e-4b51-9aba-45df7df16b08",
+    match_individuality: "",
     networkImage: {
       url: "https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/es_wordcloud.png?alt=media&token=c46e18c9-2939-41d3-a426-8b42ac5ae411",
     },
@@ -40,8 +39,7 @@ export default async function handler(
       },
       {
         genre: "【クリエイティブな解決策と社会貢献】",
-        content:
-          "具体的にどのような問題を解決したいと考えていますか？また、そのためのクリエイティブな解決策とは何だと思いますか？",
+        content: "具体的にどのような問題を解決したいと考えていますか？また、そのためのクリエイティブな解決策とは何だと思いますか？",
       },
       {
         genre: "【チームワーク】",
@@ -50,8 +48,7 @@ export default async function handler(
       },
       {
         genre: "【キャリアビジョン】",
-        content:
-          "弊社でどのようなキャリアを築きたいと考えていますか？また、それを実現するためには何が必要だと思いますか？",
+        content: "弊社でどのようなキャリアを築きたいと考えていますか？また、それを実現するためには何が必要だと思いますか？",
       },
       {
         genre: "【プロジェクトの詳細】",
@@ -93,8 +90,7 @@ export default async function handler(
       },
     ],
     ability_to_compose_a_text: {
-      __html:
-        "<h2>◯◯を志望する動機を教えてください。</h2><p><mark class=ai_highlight>私は○○を志望する理由は、テクノロジーの力で社会に革新をもたらすことに魅力を感じるからです。</mark><mark class=ai_highlight>ITの進化により、人々の生活が便利になったり、ビジネスプロセスが効率化されたりすることを目の当たりにしてきました。</mark><mark class=ai_highlight></mark>私自身も、新しい技術やアプリケーションの開発に携わることで、よりよい未来を創造したいと考えています。<mark class=ai_highlight>また、IT業界は常に変化しており、学び続ける姿勢が求められるため、自己成長の機会が豊富だと感じています。さまざまなチャレンジに立ち向かいながら、クリエイティブな解決策を提供することで、社会に貢献したいと強く思っています。そして、チームで協力し合いながら夢を実現できるIT企業でのキャリアを築きたいと考えています。</mark></p><h2>長期間にわたってグループで協力しながら何かに取り組んだエピソードを200文字程度で教えてください。</h2><p>大学のプロジェクトで、私たちはグループでアプリケーションの開発に取り組みました。メンバーは個性豊かでしたが、目標に向かって協力し合うことで強力なチームとなりました。<mark class=ai_highlight>最初は意見の食い違いもありましたが、定期的なミーティングやタスクの分担を通じて円滑なコミュニケーションを築き上げました。</mark>私はデザインを担当しましたが、プログラムの知識が限られていたため、メンバーに助けてもらいながら学びました。<mark class=ai_highlight>困難な局面もありましたが、互いを信頼し合い、サポートし合う姿勢で乗り越えました。結果として、素晴らしいアプリケーションを完成させ、発表会では好評を得ることができました。この経験は、グループワークの大切さと協力の力を学び、今後のチームでの取り組みに活かしていきたいと感じました。</mark></p>",
+      __html: "<h2>◯◯を志望する動機を教えてください。</h2><p><mark class=ai_highlight>私は○○を志望する理由は、テクノロジーの力で社会に革新をもたらすことに魅力を感じるからです。</mark><mark class=ai_highlight>ITの進化により、人々の生活が便利になったり、ビジネスプロセスが効率化されたりすることを目の当たりにしてきました。</mark><mark class=ai_highlight></mark>私自身も、新しい技術やアプリケーションの開発に携わることで、よりよい未来を創造したいと考えています。<mark class=ai_highlight>また、IT業界は常に変化しており、学び続ける姿勢が求められるため、自己成長の機会が豊富だと感じています。さまざまなチャレンジに立ち向かいながら、クリエイティブな解決策を提供することで、社会に貢献したいと強く思っています。そして、チームで協力し合いながら夢を実現できるIT企業でのキャリアを築きたいと考えています。</mark></p><h2>長期間にわたってグループで協力しながら何かに取り組んだエピソードを200文字程度で教えてください。</h2><p>大学のプロジェクトで、私たちはグループでアプリケーションの開発に取り組みました。メンバーは個性豊かでしたが、目標に向かって協力し合うことで強力なチームとなりました。<mark class=ai_highlight>最初は意見の食い違いもありましたが、定期的なミーティングやタスクの分担を通じて円滑なコミュニケーションを築き上げました。</mark>私はデザインを担当しましたが、プログラムの知識が限られていたため、メンバーに助けてもらいながら学びました。<mark class=ai_highlight>困難な局面もありましたが、互いを信頼し合い、サポートし合う姿勢で乗り越えました。結果として、素晴らしいアプリケーションを完成させ、発表会では好評を得ることができました。この経験は、グループワークの大切さと協力の力を学び、今後のチームでの取り組みに活かしていきたいと感じました。</mark></p>",
     },
   };
   await appendData(data)
@@ -111,9 +107,7 @@ async function appendData(data: StudentData) {
     admin.initializeApp({
       credential: cert({
         projectId: process.env.FIREBASE_PROJECT_ID,
-        privateKey:
-          process.env.FIREBASE_PRIVATE_KEY &&
-          process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+        privateKey: process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
       }),
     });

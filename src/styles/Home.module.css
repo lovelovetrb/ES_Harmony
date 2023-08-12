@@ -4,6 +4,10 @@
     margin-bottom: 3rem;
 }
 
+.mobile_warning {
+    display: none;
+}
+
 .id_page_container {
     margin: 3rem auto;
 }
@@ -11,5 +15,15 @@
 @media (max-width: 1024px) {
     .container {
         max-width: 90%;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        display: none;
+    }
+    .mobile_warning {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
     }
 }

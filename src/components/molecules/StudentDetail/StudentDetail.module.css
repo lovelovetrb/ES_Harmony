@@ -7,7 +7,6 @@
 }
 
 .main {
-    width: 80%;
     background-color: #094067;
     border-radius: 10px;
     padding: 20px;
@@ -30,88 +29,71 @@
     padding: 20px 25px;
 }
 
-.heading {
-    color: #094067;
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.box {
-    margin-left: auto;
-    margin-right: 10px;
-    padding: 20px 15px;
-    width: 250px;
-    text-align: left;
-    border: 5px solid #2266a6;
-    border-radius: 10px;
-    background-color: #fffffe;
-}
-
-.box p {
-    color: #094067;
-    padding: 3px 0;
-    font-size: 25px;
-    font-family: "Murecho", sans-serif;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
 .flex_column {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.imageArea {
-    width: 45%;
+.two_column {
+    width: 48.5%;
 }
 
-.imageArea .textArea {
-    padding: 2px;
+.icon_area {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.imageArea img {
+.icon {
+    object-fit: contain;
+    position: relative !important;
+    width: auto !important;
+    height: 150px !important;
+}
+
+.basic_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 20px;
+}
+
+.basic_info li {
+    margin-top: 20px;
+}
+
+.imgArea img {
     height: 100%;
     width: 100%;
     border-radius: 10px;
 }
 
+.match_text {
+    height: auto;
+    font-size: 18px;
+    line-height: 180%;
+}
+
 .subheading {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 600;
 }
 
 .question_item {
-    margin-top: 10px;
+    font-size: 18px;
+    margin-top: 15px;
     margin-left: 15px;
-}
-
-.textArea {
-    border: 5px solid #094067;
-    border-radius: 10px;
-    padding: 30px 25px;
-    width: 100%;
-    background-color: #fffffe;
-}
-
-.textArea p {
-    line-height: 2rem;
-    width: 95%;
-    margin: 0 auto;
+    line-height: 180%;
 }
 
 .analyzeArea h2 {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 25px;
     margin-bottom: 1.3rem;
     margin-top: 1.3rem;
 }
@@ -144,13 +126,19 @@
 
 @media screen and (max-width: 1024px) {
     .main {
-        width: 90%;
+        width: 100%;
+    }
+    .flex_column {
+        flex-direction: column;
+    }
+    .two_column {
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 480px) {
     .main {
-        width: 90%;
+        width: 100%;
         min-width: 100px;
     }
 }
