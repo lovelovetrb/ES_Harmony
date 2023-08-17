@@ -2,6 +2,7 @@ export interface firebaseData {
   id: string;
   data: StudentData;
 }
+
 export interface StudentData {
   id?: string;
   icon: string;

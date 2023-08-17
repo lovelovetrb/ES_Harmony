@@ -3,7 +3,7 @@ import styles from "@/styles/id.module.css";
 
 import { motion } from "framer-motion";
 
-import { StudentData } from "@/types/types";
+import { StudentData, firebaseData } from "@/types/types";
 import { getData } from "@/lib/getData";
 
 import { Zen_Kaku_Gothic_New } from "next/font/google";
@@ -60,29 +60,31 @@ const id = ({ beforeStudentID, data, afterStudentID }: Props) => {
 };
 
 export const getStaticPaths = async () => {
-  const studentData: any = await getData();
-  const paths = studentData.map((data: StudentData) => ({
+  const studentData: firebaseData[] = await getData();
+  const paths = studentData.map((data: firebaseData) => ({
     params: { id: data.id },
   }));
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async ({ params }: { params: { id: string } }) => {
-  const allStudentData: any = await getData();
+  const allStudentData: firebaseData[] = await getData();
   let beforeStudentID = "";
   let afterStudentID = "";
-  const studentData: StudentData[] = [];
-  allStudentData.map((student: StudentData, index: number) => {
-    if (student.id === params.id) {
-      studentData.push(student);
-      if (index !== 0) {
-        beforeStudentID = allStudentData[index - 1].id;
+  const studentData: firebaseData[] = [];
+  if (allStudentData != undefined) {
+    allStudentData.map((student: firebaseData, index: number) => {
+      if (student.id === params.id) {
+        studentData.push(student);
+        if (index !== 0) {
+          beforeStudentID = allStudentData[index - 1].id;
+        }
+        if (index !== allStudentData.length - 1) {
+          afterStudentID = allStudentData[index + 1].id;
+        }
       }
-      if (index !== allStudentData.length - 1) {
-        afterStudentID = allStudentData[index + 1].id;
-      }
-    }
-  });
+    });
+  }
   return {
     props: { afterStudentID, data: studentData[0], beforeStudentID },
     revalidate: 60,

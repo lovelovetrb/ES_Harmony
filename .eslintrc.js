@@ -27,6 +27,5 @@ module.exports = {
                 html: false,
             },
         ],
-        "@typescript-eslint/no-explicit-any": 0,
     },
 };
