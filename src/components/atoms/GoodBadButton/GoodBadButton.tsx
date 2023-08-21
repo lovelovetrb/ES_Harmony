@@ -13,9 +13,11 @@ const GoodBadButton = () => {
     if (type === "👍") {
       setStatus("👍");
       setStatusButtonStyles(styles.good_button);
+      setIsOpen(false)
     } else if (type === "👎") {
       setStatus("👎");
       setStatusButtonStyles(styles.bad_button);
+      setIsOpen(false)
     }
   };
 
