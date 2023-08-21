@@ -1,9 +1,9 @@
-export interface firebaseData {
+export type firebaseData = {
   id: string;
   data: StudentData;
-}
+};
 
-export interface StudentData {
+export type StudentData = {
   id?: string;
   icon: string;
   networkImage: NetworkImage;
@@ -16,7 +16,7 @@ export interface StudentData {
   questions: Question[];
   ability_to_compose_a_text: ability_to_compose_a_text;
   match_individuality: string;
-}
+};
 
 type ability_to_compose_a_text = {
   __html: string;

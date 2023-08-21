@@ -1,19 +1,19 @@
 import style from "@/components/atoms/Button/Button.module.css";
 
+type sortType = "match_level" | "originality";
 type props = {
   text: string;
-  field?: string;
-  onClickFunc?: (field?: string | undefined) => void;
+  // TODO: できることならジェネリクス使ってうまくやりたい
+  onClickFunc: (feild: sortType) => void;
+  feild: sortType;
 };
 
-const Button = ({ text, onClickFunc, field }: props) => {
+const Button = ({ text, onClickFunc, feild }: props) => {
   return (
     <button
       className={style.button}
       onClick={() => {
-        if (onClickFunc != undefined) {
-          onClickFunc(field);
-        }
+        onClickFunc(feild);
       }}
     >
       {text}

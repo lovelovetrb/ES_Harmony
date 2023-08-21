@@ -9,13 +9,13 @@ import Image from "next/image";
 type props = {
   data: StudentData;
 };
+
 export default function StudentDetail({ data }: props) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={styles.nameArea}>{data.name} さんのES</div>
         <div className={styles.inner}>
-          {/* TODO: 絵文字挿入*/}
           <div className={styles.flex_column}>
             <div className={styles.two_column}>
               <BoxArea heading="📈レーダーチャート">
@@ -23,10 +23,12 @@ export default function StudentDetail({ data }: props) {
               </BoxArea>
             </div>
             <div className={styles.two_column}>
+              {/* TODO: styling */}
               <BoxArea heading="📋基本情報">
                 <div className={styles.flex_column}>
                   <div className={styles.two_column}>
                     <div className={styles.icon_area}>
+                      {/* <div className={styles.icon_wrapper}> */}
                       <Image className={styles.icon} src={data.icon} fill alt="icon" />
                     </div>
                   </div>
@@ -58,9 +60,10 @@ export default function StudentDetail({ data }: props) {
               </BoxArea>
             </div>
             <div className={styles.two_column}>
+              {/* TODO: adjust_heightの挙動を修正 */}
               <BoxArea heading={`🔥 マッチする${data.name}さんの特徴`} adjust_height={true}>
                 <div className={styles.match_text}>
-                  {data.match_individuality ? (<p>{data.match_individuality}</p>):<p>マッチする特徴が見つかりませんでした😢</p>}
+                  {data.match_individuality ? <p>{data.match_individuality}</p> : <p>マッチする特徴が見つかりませんでした😢</p>}
                 </div>
               </BoxArea>
             </div>
@@ -82,7 +85,6 @@ export default function StudentDetail({ data }: props) {
           <Link href="/">◀ 学生一覧に戻る</Link>
         </p>
       </main>
-      <aside></aside>
     </div>
   );
 }

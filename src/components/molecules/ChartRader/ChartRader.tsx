@@ -41,7 +41,7 @@ const ChartRadar = ({ studentData }: Props) => {
         },
         pointLabels: {
           font: {
-            size: 15,
+            size: 20,
           },
         },
       },
@@ -50,7 +50,7 @@ const ChartRadar = ({ studentData }: Props) => {
       legend: {
         labels: {
           font: {
-            size: 18,
+            size: 23,
           },
         },
       },
