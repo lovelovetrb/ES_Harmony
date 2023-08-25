@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Question, StudentData } from "@/types/types";
+import { Question, firebaseData } from "@/types/types";
 import styles from "@/components/molecules/StudentDetail/StudentDetail.module.css";
 import BoxArea from "../BoxArea/BoxArea";
 import ChartRadar from "@/components/molecules/ChartRader/ChartRader";
@@ -8,13 +8,13 @@ import Image from "next/image";
 import GoodBadButton from "@/components/atoms/GoodBadButton/GoodBadButton";
 
 type props = {
-  data: StudentData;
+  data: firebaseData;
 };
 
 export default function StudentDetail({ data }: props) {
   return (
     <>
-      <GoodBadButton />
+      <GoodBadButton id={data.id} initialEval={data.studentEval} />
       <div className={styles.container}>
         <main className={styles.main}>
           <div className={styles.nameArea}>{data.name} さんのES</div>
@@ -26,7 +26,6 @@ export default function StudentDetail({ data }: props) {
                 </BoxArea>
               </div>
               <div className={styles.two_column}>
-                {/* TODO: styling */}
                 <BoxArea heading="📋基本情報">
                   <div className={styles.flex_column}>
                     <div className={styles.two_column}>
