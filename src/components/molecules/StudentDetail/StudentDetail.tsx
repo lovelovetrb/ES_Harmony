@@ -63,7 +63,6 @@ export default function StudentDetail({ data }: props) {
                 </BoxArea>
               </div>
               <div className={styles.two_column}>
-                {/* TODO: adjust_heightの挙動を修正 */}
                 <BoxArea heading={`🔥 マッチする${data.name}さんの特徴`} adjust_height={true}>
                   <div className={styles.match_text}>
                     {data.match_individuality ? <p>{data.match_individuality}</p> : <p>マッチする特徴が見つかりませんでした😢</p>}

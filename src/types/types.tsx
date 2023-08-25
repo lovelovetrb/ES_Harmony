@@ -36,4 +36,4 @@ export type NetworkImage = {
   url: string;
 };
 
-export type studentEval = "🙆" | "🤷" | "🙅";
+export type studentEval = "🙆" | "🤷" | "🙅" | "";
