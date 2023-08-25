@@ -1,6 +1,5 @@
-export type firebaseData = {
+export type firebaseData = Omit<StudentData, ""> & {
   id: string;
-  data: StudentData;
 };
 
 export type StudentData = {
@@ -16,6 +15,7 @@ export type StudentData = {
   questions: Question[];
   ability_to_compose_a_text: ability_to_compose_a_text;
   match_individuality: string;
+  studentEval: studentEval;
 };
 
 type ability_to_compose_a_text = {
@@ -35,3 +35,5 @@ export type Question = {
 export type NetworkImage = {
   url: string;
 };
+
+export type studentEval = "🙆" | "🤷" | "🙅";
