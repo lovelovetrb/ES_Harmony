@@ -17,5 +17,16 @@
 }
 
 .adjust_height {
+    /* 100% - height + margin-top + margin-bottom */
     height: calc(100% - 100px);
+}
+
+@media screen and (max-width: 480px) {
+    .heading {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+    .textArea {
+        padding: 20px 15px;
+    }
 }

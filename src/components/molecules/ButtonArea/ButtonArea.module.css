@@ -5,3 +5,10 @@
     margin-bottom: 30px;
     padding-right: 10px;
 }
+
+@media screen and (max-width: 480px) {
+    .buttonArea {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}

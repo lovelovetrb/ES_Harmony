@@ -2,7 +2,7 @@
     border: 3px solid #000000;
     border-radius: 10px;
     margin-top: 30px;
-    padding: 40px 25px;
+    padding: 40px;
     background-color: #fffffe;
     display: flex;
     flex-direction: row;
@@ -14,7 +14,6 @@
     position: relative !important;
     width: auto !important;
     height: 150px !important;
-    margin-left: 30px;
     border-radius: 10px;
 }
 
@@ -57,5 +56,21 @@
     .student_info,
     .match_info {
         margin-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        margin-top: 10px;
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .icon {
+        height: 80px !important;
+    }
+
+    .linkArea {
+        display: none;
     }
 }

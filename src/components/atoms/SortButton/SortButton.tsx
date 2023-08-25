@@ -1,14 +1,13 @@
-import style from "@/components/atoms/Button/Button.module.css";
+import style from "@/components/atoms/SortButton/SortButton.module.css";
 
 type sortType = "match_level" | "originality";
 type props = {
   text: string;
-  // TODO: できることならジェネリクス使ってうまくやりたい
   onClickFunc: (feild: sortType) => void;
   feild: sortType;
 };
 
-const Button = ({ text, onClickFunc, feild }: props) => {
+const SortButton = ({ text, onClickFunc, feild }: props) => {
   return (
     <button
       className={style.button}
@@ -21,4 +20,4 @@ const Button = ({ text, onClickFunc, feild }: props) => {
   );
 };
 
-export default Button;
+export default SortButton;

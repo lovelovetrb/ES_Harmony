@@ -4,8 +4,8 @@ import { useState } from "react";
 
 import styles from "@/styles/Home.module.css";
 
+import SortButton from "@/components/atoms/SortButton/SortButton";
 import ButtonArea from "@/components/molecules/ButtonArea/ButtonArea";
-import Button from "@/components/atoms/Button/Button";
 import StudentCard from "@/components/molecules/StudentCard/StudentCard";
 
 import { StudentData } from "@/types/types";
@@ -44,13 +44,13 @@ export default function Home({ studentData }: Props) {
 
   const listVariants = {
     visible: {
-      opacity: 1, // 不透明度1
+      opacity: 1,
       transition: {
         staggerChildren: 0.1, // 子要素に1秒間隔でアニメーションを行う
       },
     },
     hidden: {
-      opacity: 0, // 不透明度0
+      opacity: 0,
     },
   };
 
@@ -68,16 +68,14 @@ export default function Home({ studentData }: Props) {
       </Head>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
         <main>
-          {/* モバイル実装 */}
-          <p className={styles.mobile_warning}>PCからご覧ください</p>
           <div className={styles.container}>
             <ButtonArea>
-              <Button
+              <SortButton
                 text={`マッチ度 ${sort == "match_level" && order == "asc" ? "↑" : "↓"}`}
                 onClickFunc={handleSort}
                 feild="match_level"
               />
-              <Button
+              <SortButton
                 text={`オリジナリティ ${sort == "originality" && order == "asc" ? "↑" : "↓"}`}
                 onClickFunc={handleSort}
                 feild="originality"

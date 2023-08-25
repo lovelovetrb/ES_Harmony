@@ -47,7 +47,7 @@ export default function StudentDetail({ data }: props) {
                 </BoxArea>
               </div>
             </div>
-            <BoxArea heading={`📝オリジナリティ分析 / オリジナリティ: ${data.originality}%`}>
+            <BoxArea heading="📝オリジナリティ分析">
               <div className={styles.analyzeArea} dangerouslySetInnerHTML={data.ability_to_compose_a_text} />
               <ol className={styles.usage}>
                 <li className="highlight">オリジナリティのある文章</li>
@@ -63,7 +63,7 @@ export default function StudentDetail({ data }: props) {
                 </BoxArea>
               </div>
               <div className={styles.two_column}>
-                <BoxArea heading={`🔥 マッチする${data.name}さんの特徴`} adjust_height={true}>
+                <BoxArea heading={`🔥 ${data.name}さんの特徴`} adjust_height={true}>
                   <div className={styles.match_text}>
                     {data.match_individuality ? <p>{data.match_individuality}</p> : <p>マッチする特徴が見つかりませんでした😢</p>}
                   </div>
@@ -75,7 +75,7 @@ export default function StudentDetail({ data }: props) {
                 return (
                   <div key={index}>
                     <h3 className={styles.subheading}>
-                      {index + 1}. ジャンル：{item.genre}
+                      {index + 1}.<span className={styles.mobile_none}> ジャンル : </span>{item.genre}
                     </h3>
                     <h3 className={styles.question_item}>{item.content}</h3>
                   </div>
