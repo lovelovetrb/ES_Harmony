@@ -158,6 +158,11 @@
 }
 
 @media screen and (max-width: 480px) {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
     .main {
         width: 95%;
         min-width: 100px;
@@ -165,7 +170,7 @@
     }
 
     .nameArea {
-        font-size: 23px;
+        font-size: 20px;
     }
 
     .basic_info {
@@ -177,7 +182,7 @@
     }
 
     .analyzeArea h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .analyzeArea p {
@@ -198,7 +203,7 @@
     }
 
     .subheading {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .question_item {

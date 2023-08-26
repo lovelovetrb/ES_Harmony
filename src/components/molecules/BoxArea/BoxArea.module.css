@@ -23,8 +23,10 @@
 
 @media screen and (max-width: 480px) {
     .heading {
-        margin-top: 20px;
-        font-size: 25px;
+        height: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 18px;
     }
     .textArea {
         padding: 20px 15px;
