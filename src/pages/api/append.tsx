@@ -11,6 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const data: StudentData = {
     icon: "https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/icon.png?alt=media&token=bb5fbeab-ab1e-4b51-9aba-45df7df16b08",
     match_individuality: "",
+    studentEval: "",
     networkImage: {
       url: "https://firebasestorage.googleapis.com/v0/b/es-harmony.appspot.com/o/es_wordcloud.png?alt=media&token=c46e18c9-2939-41d3-a426-8b42ac5ae411",
     },
@@ -97,7 +98,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     .then(() => {
       res.status(200).json({ status: "ok" });
     })
-    .catch((error: any) => {
+    .catch((error) => {
       res.status(500).json({ status: error });
     });
 }

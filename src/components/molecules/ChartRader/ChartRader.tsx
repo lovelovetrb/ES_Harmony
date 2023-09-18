@@ -4,18 +4,29 @@ import "chart.js/auto";
 
 import styles from "@/components/molecules/ChartRader/ChartRader.module.css";
 import { StudentData } from "@/types/types";
+import { isMobileOnly } from "react-device-detect";
 
 type Props = {
   studentData: StudentData;
 };
 
 const ChartRadar = ({ studentData }: Props) => {
+  const fontSize = {
+    pc: {
+      pointLabels: 20,
+      legendLables: 25,
+    },
+    mobile: {
+      pointLabels: 9,
+      legendLables: 13,
+    },
+  };
+
   const data: ChartData<"radar"> = {
     labels: ["マッチ度", "オリジナリティ", "SPI", "コーディングテスト", "エントリー時期"],
     datasets: [
       {
         label: `${studentData.name}さんのレーダーチャート`,
-        // TODO :データの差し替え
         data: [studentData.match_level, studentData.originality, 60, 80, 50],
         borderWidth: 1,
       },
@@ -35,13 +46,11 @@ const ChartRadar = ({ studentData }: Props) => {
       r: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 0,
-          },
+          display: false,
         },
         pointLabels: {
           font: {
-            size: 15,
+            size: isMobileOnly ? fontSize.mobile.pointLabels : fontSize.pc.pointLabels,
           },
         },
       },
@@ -50,7 +59,7 @@ const ChartRadar = ({ studentData }: Props) => {
       legend: {
         labels: {
           font: {
-            size: 18,
+            size: isMobileOnly ? fontSize.mobile.legendLables : fontSize.pc.legendLables,
           },
         },
       },

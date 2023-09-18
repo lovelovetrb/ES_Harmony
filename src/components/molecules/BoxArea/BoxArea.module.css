@@ -1,6 +1,7 @@
 .heading {
     color: #094067;
-    font-size: 1.8rem;
+    height: 50px;
+    font-size: 35px;
     font-weight: 700;
     letter-spacing: 1px;
     margin-top: 40px;
@@ -16,5 +17,18 @@
 }
 
 .adjust_height {
-    height: 80%;
+    /* 100% - height + margin-top + margin-bottom */
+    height: calc(100% - 100px);
+}
+
+@media screen and (max-width: 480px) {
+    .heading {
+        height: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    .textArea {
+        padding: 20px 15px;
+    }
 }

@@ -1,6 +1,16 @@
+/* 
+* PC size
+* text -> font-size: 20px;
+* heading -> font-size: 25px;
+*
+* mobile size
+* text -> font-size: 12px;
+* heading -> font-size: 20px;
+* */
+
 .container {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,8 +25,8 @@
 .nameArea {
     color: #fffffe;
     font-size: 35px;
-    text-align: center;
     font-weight: 700;
+    text-align: center;
     letter-spacing: 3px;
     margin-top: 10px;
     margin-bottom: 25px;
@@ -33,6 +43,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: stretch;
 }
 
 .two_column {
@@ -46,11 +57,19 @@
     height: 100%;
 }
 
+.icon_wrapper {
+    /* padding: 10px; */
+    border: 3px solid #094067;
+    border-radius: 10px;
+    background-color: #fffffe;
+}
+
 .icon {
     object-fit: contain;
     position: relative !important;
     width: auto !important;
-    height: 150px !important;
+    height: 200px !important;
+    border-radius: 10px;
 }
 
 .basic_info {
@@ -65,37 +84,11 @@
     margin-top: 20px;
 }
 
-.imgArea img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.match_text {
-    height: auto;
-    font-size: 18px;
-    line-height: 180%;
-}
-
-.subheading {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 23px;
-    font-weight: 600;
-}
-
-.question_item {
-    font-size: 18px;
-    margin-top: 15px;
-    margin-left: 15px;
-    line-height: 180%;
-}
-
 .analyzeArea h2 {
     font-weight: 700;
     font-size: 25px;
-    margin-bottom: 1.3rem;
-    margin-top: 1.3rem;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 /* analyzeAreaのh2の1個目に対するcss */
@@ -104,16 +97,44 @@
 }
 
 .analyzeArea p {
-    line-height: 2rem;
+    font-size: 20px;
+    line-height: 180%;
 }
 
 .usage {
-    margin-top: 3rem;
-    width: 250px;
+    margin-top: 40px;
+    width: 300px;
 }
 
 .usage li {
-    margin-top: 1rem;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.imgArea img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.match_text {
+    height: auto;
+    font-size: 20px;
+    line-height: 180%;
+}
+
+.subheading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.question_item {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+    line-height: 180%;
 }
 
 .link {
@@ -126,7 +147,7 @@
 
 @media screen and (max-width: 1024px) {
     .main {
-        width: 100%;
+        width: 90%;
     }
     .flex_column {
         flex-direction: column;
@@ -137,8 +158,63 @@
 }
 
 @media screen and (max-width: 480px) {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
     .main {
-        width: 100%;
+        width: 95%;
         min-width: 100px;
+        padding: 10px;
+    }
+
+    .nameArea {
+        font-size: 20px;
+    }
+
+    .basic_info {
+        font-size: 12px;
+    }
+
+    .icon {
+        height: 100px !important;
+    }
+
+    .analyzeArea h2 {
+        font-size: 18px;
+    }
+
+    .analyzeArea p {
+        font-size: 12px;
+    }
+
+    .usage {
+        margin-top: 40px;
+        width: 200px;
+    }
+
+    .usage li {
+        font-size: 10px;
+    }
+
+    .match_text {
+        font-size: 12px;
+    }
+
+    .subheading {
+        font-size: 18px;
+    }
+
+    .question_item {
+        font-size: 12px;
+    }
+
+    .link {
+        font-size: 12px;
+    }
+
+    .mobile_none {
+        display: none;
     }
 }

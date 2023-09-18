@@ -2,11 +2,11 @@
     border: 3px solid #000000;
     border-radius: 10px;
     margin-top: 30px;
-    padding: 40px 25px;
+    padding: 40px;
     background-color: #fffffe;
     display: flex;
     flex-direction: row;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .icon {
@@ -14,57 +14,63 @@
     position: relative !important;
     width: auto !important;
     height: 150px !important;
-    margin-left: 20px;
+    border-radius: 10px;
 }
 
 .student_info,
 .match_info {
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin-left: 50px;
 }
 
-.evalSwitch_S {
-    margin: 5px 0;
-    color: #dd54cf;
-    font-family: "Rubik", sans-serif;
+.eval {
+    margin: 5px 0px 5px 10px;
     font-weight: bold;
-    margin-left: 10px;
+}
+
+.evalSwitch_S {
+    color: #dd54cf;
 }
 
 .evalSwitch_A {
-    margin: 5px 0;
     color: #f5101e;
-    font-weight: bold;
-    margin-left: 10px;
 }
 
 .evalSwitch_B {
-    margin: 5px 0;
     color: #2bb939;
-    font-weight: bold;
-    margin-left: 10px;
 }
 
 .evalSwitch_C {
-    margin: 5px 0;
     color: #1043f5;
-    font-weight: bold;
-    margin-left: 10px;
 }
 
-.judgeArea {
+.linkArea {
     display: flex;
     align-items: flex-end;
     margin-left: auto;
-    font-size: 20px;
 }
 
 @media screen and (max-width: 1200px) {
     .student_info,
     .match_info {
         margin-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        margin-top: 10px;
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .icon {
+        height: 80px !important;
+    }
+
+    .linkArea {
+        display: none;
     }
 }

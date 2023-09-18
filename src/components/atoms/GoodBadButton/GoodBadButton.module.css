@@ -1,0 +1,57 @@
+.wrapper {
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    font-size: 30px;
+}
+
+.wrapper button {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid white;
+    text-align: center;
+}
+
+.eval_button {
+    position: relative;
+    color: white;
+    background-color: #3cb371;
+    z-index: 999;
+}
+
+.good_button {
+    background-color: #ff8383;
+}
+
+.on_hold_button {
+    color: white;
+    background-color: #3cb371;
+}
+
+.bad_button {
+    background-color: #839eff;
+}
+
+.good_button_position {
+    position: absolute;
+    z-index: 1;
+}
+
+.on_hold_button_position {
+    position: absolute;
+    z-index: 1;
+}
+
+.bad_button_position {
+    position: absolute;
+    z-index: 1;
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper button {
+        height: 70px;
+        width: 70px;
+    }
+}
